@@ -1,0 +1,82 @@
+*
+*.xd
+*.ai
+*.png
+*.jpeg
+*.jpg
+*.avif
+*.webp
+
+
+!Adobe Illustrator
+!Adobe Illustrator/*.ai
+
+
+!Adobe XD
+!Adobe XD/*.xd
+
+
+!Adobe XD/Photo moodboard
+!Adobe XD/Photo moodboard/*.png
+!Adobe XD/Photo moodboard/*.jpg
+!Adobe XD/Photo moodboard/*.jpeg
+
+!Fichers Photoshop
+!Fichers Photoshop/images de références
+!Fichers Photoshop/images de références/*
+
+
+!Inspirations décors
+!Inspirations décors/*
+!Inspirations décors/Egypte/*.png
+!Inspirations décors/Egypte/*.jpg
+!Inspirations décors/Gaule/*.png
+!Inspirations décors/Grèce/*.png
+!Inspirations décors/Grèce/*.avif
+!Inspirations décors/Grèce/*.webp
+!Inspirations décors/Grèce/*.jpeg
+!Inspirations décors/Perse/*.webp
+!Inspirations décors/Perse/*.jpg
+!Inspirations décors/Perse/*.png
+!Inspirations décors/Rome/*.png
+!Inspirations décors/Rome/*.avif
+
+!.gitignore
+!composer.json*
+!composer.lock*
+!wp-content/
+wp-content/*
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/portfolio
+!wp-content/themes/portfolio/*
+wp-content/themes/portfolio/.env.local.ini
+!wp-content/themes/portfolio/validator/*
+!wp-content/themes/portfolio/core/*
+!wp-content/themes/portfolio/core/exceptions/*
+!wp-content/themes/portfolio/php/*
+!wp-content/themes/portfolio/public/*
+!wp-content/themes/portfolio/public/css/*
+!wp-content/themes/portfolio/public/js/*
+!wp-content/themes/portfolio/public/sass/*
+!wp-content/themes/portfolio/resources/*
+!wp-content/themes/portfolio/resources/components/*
+!wp-content/themes/portfolio/resources/components/home/*
+!wp-content/themes/portfolio/resources/components/global/*
+!wp-content/themes/portfolio/resources/components/global/forms/*
+!wp-content/themes/portfolio/resources/components/global/contact_me/*
+!wp-content/themes/portfolio/resources/components/global/decoration/*
+!wp-content/themes/portfolio/resources/components/global/navigations/*
+!wp-content/themes/portfolio/resources/components/global/titles/*
+!wp-content/themes/portfolio/resources/components/global/toggle_input/*
+!wp-content/themes/portfolio/resources/components/global/no_js_banner/*
+!wp-content/themes/portfolio/resources/components/global/forms/labels_and_inputs/*
+!wp-content/themes/portfolio/resources/fonts/*
+!wp-content/themes/portfolio/resources/fonts/gotham/*
+!wp-content/themes/portfolio/resources/fonts/trajan/*
+!wp-content/themes/portfolio/resources/fonts/proxima/*
+!wp-content/themes/portfolio/resources/fonts/jenson/*
+!wp-content/themes/portfolio/resources/images/*
+!wp-content/themes/portfolio/resources/images/decors/*
+
+/vendor/
