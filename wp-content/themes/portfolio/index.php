@@ -1,5 +1,7 @@
 <?= get_header() ?>
 
-<main></main>
+<main>
+
+</main>
 
 <?= get_footer() ?>

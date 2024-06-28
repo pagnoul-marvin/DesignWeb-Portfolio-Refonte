@@ -1,3 +1,76 @@
+.hidden {
+  overflow: hidden !important;
+  font-size: 0 !important;
+  text-indent: -100000px !important;
+  position: absolute;
+}
 
+.main_footer_link {
+  font-family: "Helvetica-Roman", "Arial-Regular", "Roboto-Regular", sans-serif;
+  color: rgb(255, 255, 255);
+  text-decoration: 1px underline transparent;
+  transition: 0.3s ease-in-out;
+}
+.main_footer_link:hover {
+  text-decoration: 1px underline rgb(255, 255, 255);
+}
+
+.flex_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body {
+  font-family: "Helvetica-Roman", "Arial-Regular", "Roboto-Regular", sans-serif;
+  font-size: 1.5625em;
+}
+body h1, body h2, body h3 {
+  font-family: "HelveticBold", "Arial-Bold", "Roboto-Bold", sans-serif;
+  font-weight: bold;
+}
+body h2, body h3 {
+  color: #09214A;
+}
+body h1 {
+  font-size: 6.25em;
+  color: rgb(255, 255, 255);
+}
+body h2 {
+  font-size: 6.25em;
+}
+body h3 {
+  font-size: 2.5em;
+}
+body header {
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 0;
+  width: calc(100% - 10em);
+  padding: 5em 5em 0 5em;
+}
+body header .main_nav_home_link {
+  background-image: url("../../resources/images/logo.svg");
+  width: 110px;
+  height: 81px;
+  text-indent: -10000px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+body header .main_nav_list_item:not(:last-child) {
+  margin-right: 2.8em;
+}
+body main {
+  background-color: #EAEAEA;
+  color: #09214A;
+}
+body footer {
+  background-color: #09214A;
+  padding: 5em;
+  color: rgb(255, 255, 255);
+}
+body footer h3 {
+  color: rgb(255, 255, 255);
+}
 
 /*# sourceMappingURL=main.css.map */

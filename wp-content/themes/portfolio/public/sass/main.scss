@@ -1,2 +1,96 @@
 //sass --watch index.scss:../css/index.css
 @import "variables";
+
+.hidden {
+  overflow: hidden !important;
+  font-size: 0 !important;
+  text-indent: -100000px !important;
+  position: absolute;
+}
+
+.main_footer_link {
+  font-family: 'Helvetica-Roman', 'Arial-Regular', 'Roboto-Regular', sans-serif;
+  color: $white_color;
+  text-decoration: 1px underline transparent;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    text-decoration: 1px underline $white_color;
+  }
+}
+
+.flex_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body {
+  font-family: 'Helvetica-Roman', 'Arial-Regular', 'Roboto-Regular', sans-serif;
+  font-size: 1.5625em;
+
+  h1, h2, h3 {
+    font-family: 'HelveticBold', 'Arial-Bold', 'Roboto-Bold', sans-serif;
+    font-weight: bold;
+  }
+
+  h2, h3 {
+    color: $dark_blue_color;
+  }
+
+  h1 {
+    font-size: 6.25em;
+    color: $white_color;
+  }
+
+  h2 {
+    font-size: 6.25em;
+  }
+
+  h3 {
+    font-size: 2.5em;
+  }
+
+  header {
+    color: $white_color;
+    position: absolute;
+    top: 0;
+    width: calc(100% - 10em);
+    padding: 5em 5em 0 5em;
+
+    .main_nav {
+      &_home_link {
+        background-image: url("../../resources/images/logo.svg");
+        width: 110px;
+        height: 81px;
+        text-indent: -10000px;
+        overflow: hidden;
+        background-repeat: no-repeat;
+      }
+
+      &_list {
+        &_item {
+          &:not(:last-child) {
+            margin-right: 2.8em;
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    background-color: $light_grey_color;
+    color: $dark_blue_color;
+  }
+
+  footer {
+    background-color: $dark_blue_color;
+    padding: 5em;
+    color: $white_color;
+
+    h3 {
+      color: $white_color;
+    }
+
+  }
+}
