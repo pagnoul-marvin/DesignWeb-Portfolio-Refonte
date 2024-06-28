@@ -59,6 +59,10 @@ wp-content/themes/portfolio/.env.local.ini
 !wp-content/themes/portfolio/public/css/*
 !wp-content/themes/portfolio/public/js/*
 !wp-content/themes/portfolio/public/sass/*
+!wp-content/themes/portfolio/public/fonts/*
+!wp-content/themes/portfolio/public/fonts/arial/*
+!wp-content/themes/portfolio/public/fonts/helvetica_neue/*
+!wp-content/themes/portfolio/public/fonts/roboto/*
 !wp-content/themes/portfolio/resources/*
 !wp-content/themes/portfolio/resources/components/*
 !wp-content/themes/portfolio/resources/components/home/*
@@ -71,7 +75,6 @@ wp-content/themes/portfolio/.env.local.ini
 !wp-content/themes/portfolio/resources/components/global/toggle_input/*
 !wp-content/themes/portfolio/resources/components/global/no_js_banner/*
 !wp-content/themes/portfolio/resources/components/global/forms/labels_and_inputs/*
-!wp-content/themes/portfolio/resources/fonts/*
 !wp-content/themes/portfolio/resources/fonts/gotham/*
 !wp-content/themes/portfolio/resources/fonts/trajan/*
 !wp-content/themes/portfolio/resources/fonts/proxima/*
