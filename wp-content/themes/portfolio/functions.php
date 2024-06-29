@@ -5,7 +5,6 @@ add_filter('use_block_editor_for_post', '__return_false');
 register_nav_menu('main', 'Navigation principale, en-tête du site');
 register_nav_menu('footer', 'Navigation de pied de page');
 register_nav_menu('socials', 'Navigation de réseaux sociaux');
-const BASE_PATH = __DIR__ . '/';
 
 function dw_asset(string $file): string
 {
@@ -37,7 +36,32 @@ function dw_get_navigation_links(string $location): array
     return $items;
 }
 
-function base_path(string $path = ''): string
+function dw_component(string $component, array $arguments = []): void
 {
-    return BASE_PATH . "{$path}";
+    if(! ($path = realpath(__DIR__ . '/components/' . $component . '.php'))) {
+        throw new Exception('Component "'. $component .'" is not defined.');
+    }
+
+    extract($arguments);
+
+    include($path);
+}
+
+function give_header_class (): string
+{
+    $page_id = get_the_ID();
+
+    $header_class = '';
+
+    if ($page_id === 7 || $page_id === 15 || $page_id === 33) {
+        $header_class .= 'home';
+    }elseif ($page_id === 11) {
+        $header_class .= 'about';
+    }elseif ($page_id === 9) {
+        $header_class .= 'contact';
+    }else if ($page_id === 13) {
+        $header_class .= 'projects';
+    }
+
+    return $header_class;
 }

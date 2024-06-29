@@ -16,11 +16,9 @@
 <body>
 
 
-<header>
+<header class="<?= give_header_class() ?>">
 
     <h1 class="hidden"><?= get_the_title() ?></h1>
-
-    <div class="background"></div>
 
     <div class="content">
 
@@ -46,6 +44,4 @@
 
         </nav>
 
-    </div>
 
-</header>
