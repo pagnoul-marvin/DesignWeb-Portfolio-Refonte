@@ -15,30 +15,37 @@
 </head>
 <body>
 
-<h1><?= get_the_title() ?></h1>
 
 <header>
 
-    <nav class="main_nav flex_container">
+    <h1 class="hidden"><?= get_the_title() ?></h1>
 
-        <h2 class="hidden">Navigation principale</h2>
+    <div class="background"></div>
 
-        <a class="main_nav_home_link" href="<?= home_url() ?>" title="Aller vers l'accueil">Aller vers l&rsquo;accueil</a>
+    <div class="content">
 
-        <ul class="flex_container main_nav_list">
+        <nav class="main_nav flex_container">
 
-            <?php foreach (dw_get_navigation_links('main') as $link): ?>
+            <h2 class="hidden">Navigation principale</h2>
 
-                <li class="main_nav_list_item">
+            <a class="main_nav_home_link" href="<?= home_url() ?>" title="Aller vers l'accueil">Aller vers l&rsquo;accueil</a>
 
-                    <a class="main_footer_link" href="<?= $link->url ?>" title="Aller vers la page <?= $link->label ?>"><?= $link->label ?></a>
+            <ul class="flex_container main_nav_list">
 
-                </li>
+                <?php foreach (dw_get_navigation_links('main') as $link): ?>
 
-            <?php endforeach; ?>
+                    <li class="main_nav_list_item">
 
-        </ul>
+                        <a class="main_footer_link text" href="<?= $link->url ?>" title="Aller vers la page <?= $link->label ?>"><?= $link->label ?></a>
 
-    </nav>
+                    </li>
+
+                <?php endforeach; ?>
+
+            </ul>
+
+        </nav>
+
+    </div>
 
 </header>

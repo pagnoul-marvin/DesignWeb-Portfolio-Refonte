@@ -1,8 +1,43 @@
+@charset "UTF-8";
 .hidden {
   overflow: hidden !important;
   font-size: 0 !important;
   text-indent: -100000px !important;
   position: absolute;
+}
+
+.text {
+  font-size: 1.5625em;
+}
+
+.cta_links {
+  font-size: 2.5em;
+  padding: 1.25em;
+  color: rgb(255, 255, 255);
+  text-decoration: 1px underline transparent;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+  display: inline-block;
+  border-radius: 0.25em;
+  font-family: "Helvetica-Bold", "Arial-Bold", "Roboto-Bold", sans-serif;
+  font-weight: bold;
+}
+.cta_links:hover {
+  text-decoration: 1px underline rgb(255, 255, 255);
+  transform: scale(1.1);
+}
+
+.light_links {
+  background-color: #254494;
+}
+.light_links_footer {
+  background-color: #254494;
+  font-size: 1.875em;
+  border-radius: 0.333em;
+}
+
+.dark_links {
+  background-color: #09214A;
 }
 
 .main_footer_link {
@@ -23,7 +58,6 @@
 
 body {
   font-family: "Helvetica-Roman", "Arial-Regular", "Roboto-Regular", sans-serif;
-  font-size: 1.5625em;
 }
 body h1, body h2, body h3 {
   font-family: "HelveticBold", "Arial-Bold", "Roboto-Bold", sans-serif;
@@ -44,12 +78,29 @@ body h3 {
 }
 body header {
   color: rgb(255, 255, 255);
+  width: calc(100vw - 10em);
+  height: calc(100vh - 10em);
+  padding: 5em;
+  overflow: hidden;
+  position: relative;
+}
+body header .background {
   position: absolute;
   top: 0;
-  width: calc(100% - 10em);
-  padding: 5em 5em 0 5em;
+  left: 0;
+  background-image: url("../../resources/images/décors rome.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(10px);
+  width: 100%;
+  min-height: 100%;
 }
-body header .main_nav_home_link {
+body header .content {
+  z-index: 1;
+  position: relative;
+}
+body header .content .main_nav_home_link {
   background-image: url("../../resources/images/logo.svg");
   width: 110px;
   height: 81px;
@@ -57,19 +108,69 @@ body header .main_nav_home_link {
   overflow: hidden;
   background-repeat: no-repeat;
 }
-body header .main_nav_list_item:not(:last-child) {
+body header .content .main_nav_list_item:not(:last-child) {
   margin-right: 2.8em;
 }
 body main {
-  background-color: #EAEAEA;
+  background-color: #dcdcdc;
   color: #09214A;
+  margin: 12.5em 0;
 }
 body footer {
   background-color: #09214A;
   padding: 5em;
   color: rgb(255, 255, 255);
 }
-body footer h3 {
+body footer article.flex_container {
+  align-items: initial;
+}
+body footer article.flex_container:last-child small {
+  font-size: 1.25em;
+}
+body footer article.flex_container:first-child {
+  border-bottom: 1px solid rgb(255, 255, 255);
+  padding-bottom: 5em;
+  margin-bottom: 5em;
+}
+body footer article.flex_container:first-child nav, body footer article.flex_container:first-child aside, body footer article.flex_container:first-child div {
+  flex-direction: column;
+  gap: 3.75em;
+  justify-content: initial;
+  align-items: initial;
+}
+body footer article.flex_container:first-child nav ul {
+  gap: 1.875em;
+  flex-direction: column;
+  align-items: initial;
+}
+body footer article.flex_container:first-child aside {
+  flex-basis: 43.8125em;
+}
+body footer article.flex_container:first-child aside ul li:first-child a {
+  background-image: url("../../resources/images/facebook.svg"), url("../../resources/images/jarre.svg");
+}
+body footer article.flex_container:first-child aside ul li:nth-of-type(2) a {
+  background-image: url("../../resources/images/instagram.svg"), url("../../resources/images/jarre.svg");
+}
+body footer article.flex_container:first-child aside ul li:last-child a {
+  background-image: url("../../resources/images/github.svg"), url("../../resources/images/jarre.svg");
+}
+body footer article.flex_container:first-child aside ul li a {
+  overflow: hidden;
+  background-position: center 125px, center;
+  background-repeat: no-repeat, no-repeat;
+  display: inline-block;
+  text-indent: -100000px;
+  width: 156px;
+  height: 317px;
+}
+body footer article.flex_container div p {
+  width: 11.68em;
+}
+body footer article.flex_container div a {
+  margin-top: 1em;
+}
+body footer article.flex_container h3 {
   color: rgb(255, 255, 255);
 }
 

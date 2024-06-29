@@ -1,75 +1,79 @@
 <footer>
 
-    <div>
+    <article class="flex_container">
 
-        <article class="flex_container">
+        <h2 class="hidden">Navigation de pied de page</h2>
 
-            <h2 class="hidden">Navigation de pied de page</h2>
+        <nav class="flex_container">
 
-            <nav>
+            <h3>Navigation</h3>
 
-                <h3>Navigation</h3>
+            <ul class="flex_container">
 
-                <ul>
+                <?php foreach (dw_get_navigation_links('footer') as $link): ?>
 
-                    <?php foreach (dw_get_navigation_links('footer') as $link): ?>
+                    <li>
 
-                        <li>
+                        <a class="main_footer_link text" href="<?= $link->url ?>"
+                           title="Aller vers la page <?= $link->label ?>"><?= $link->label ?></a>
 
-                            <a class="main_footer_link" href="<?= $link->url ?>"
-                               title="Aller vers la page <?= $link->label ?>"><?= $link->label ?></a>
+                    </li>
 
-                        </li>
+                <?php endforeach; ?>
 
-                    <?php endforeach; ?>
+            </ul>
 
-                </ul>
+        </nav>
 
-            </nav>
+        <aside class="flex_container">
 
-            <aside>
+            <h3>Mes r&eacute;seaux</h3>
 
-                <h3>Mes r&eacute;seaux</h3>
+            <ul class="flex_container">
 
-                <ul>
+                <?php foreach (dw_get_navigation_links('socials') as $link): ?>
 
-                    <?php foreach (dw_get_navigation_links('socials') as $link): ?>
+                    <li>
 
-                        <li>
+                        <a class="text" href="<?= $link->url ?>"
+                           title="Aller vers la page <?= $link->label ?>"><?= $link->label ?></a>
 
-                            <a href="<?= $link->url ?>"
-                               title="Aller vers la page <?= $link->label ?>"><?= $link->label ?></a>
+                    </li>
 
-                        </li>
+                <?php endforeach; ?>
 
-                    <?php endforeach; ?>
+            </ul>
 
-                </ul>
+        </aside>
 
-            </aside>
+        <div class="flex_container">
+
+            <h3>Contactez&ndash;moi&nbsp;!</h3>
 
             <div>
 
-                <h3>Contactez&ndash;moi&nbsp;!</h3>
+                <p class="text">Si vous d&eacute;sirez r&eacute;aliser un projet avec moi, n&rsquo;h&eacute;sitez pas &agrave; me
+                    contacter&nbsp;!</p>
 
-                <p>Si vous d&eacute;sirez r&eacute;aliser un projet avec moi, n&rsquo;h&eacute;sitez pas &agrave; me contacter&nbsp;!</p>
-
-                <a href="<?= home_url().'/me-contacter/' ?>" title="Aller vers la page me contacter">Contactez&ndash;moi&nbsp;!</a>
+                <a class="cta_links light_links_footer" href="<?= home_url() . '/me-contacter/' ?>"
+                   title="Aller vers la page me contacter">Contactez&ndash;moi&nbsp;!</a>
 
             </div>
 
-        </article>
+        </div>
 
-        <article>
+    </article>
 
-            <h2 class="hidden">Mentions l&eacute;gales</h2>
+    <article class="flex_container">
 
-            <small>&copy; 2024 Marvin Pagnoul &ndash; Tous droits r&eacute;serv&eacute;s</small>
+        <h2 class="hidden">Mentions l&eacute;gales</h2>
 
-            <small><a class="main_footer_link" href="<?= home_url() . '/mentions-legales/' ?>" title="Aller voir les mentions légales">Mentions l&eacute;gales</a></small>
+        <small class="text">&copy; 2024 Marvin Pagnoul &ndash; Tous droits r&eacute;serv&eacute;s</small>
 
-        </article>
-    </div>
+        <small><a class="main_footer_link" href="<?= home_url() . '/mentions-legales/' ?>"
+                  title="Aller voir les mentions légales">Mentions l&eacute;gales</a></small>
+
+    </article>
 
 </footer>
 
