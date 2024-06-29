@@ -72,6 +72,9 @@ body h1 {
 body h2 {
   font-size: 6.25em;
 }
+body h2.main_title {
+  color: rgb(255, 255, 255);
+}
 body h3 {
   font-size: 2.5em;
 }
@@ -120,6 +123,51 @@ body header .content .main_nav_home_link {
 }
 body header .content .main_nav_list_item:not(:last-child) {
   margin-right: 2.8em;
+}
+body header .content div.flex_container {
+  margin-top: 3.5em;
+  align-items: initial;
+}
+body header .content div.flex_container .title_and_catchphrase_container .main_title span {
+  display: block;
+  margin-bottom: 0.25em;
+}
+body header .content div.flex_container .title_and_catchphrase_container .catchphrase {
+  margin-top: 1.5em;
+  font-size: 2.5em;
+}
+body header .content div.flex_container .list_links li:not(:last-child) {
+  margin-bottom: 1.5625em;
+}
+body header .content div.flex_container .list_links li:first-child a {
+  background-image: url("../../resources/images/decors_egypte_small.svg");
+}
+body header .content div.flex_container .list_links li:nth-of-type(2) a {
+  background-image: url("../../resources/images/decors_perse_small.svg");
+}
+body header .content div.flex_container .list_links li:last-child a {
+  background-image: url("../../resources/images/decors_grece_small.svg");
+}
+body header .content div.flex_container .list_links li .cards_link {
+  display: inline-block;
+  border-radius: 0.625em;
+  text-indent: -100000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 26.625em;
+  height: 15.25em;
+}
+body header .content div.flex_container .scroll_down {
+  position: absolute;
+  left: calc(50% - 151px);
+  bottom: 0;
+  background-image: url("../../resources/images/fleche_bas.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  padding-bottom: calc(1.875em + 51px);
+}
+body header .content div.flex_container .scroll_down_phrase {
+  font-size: 2.1875em;
 }
 body main {
   background-color: #dcdcdc;

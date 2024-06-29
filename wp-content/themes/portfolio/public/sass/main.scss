@@ -80,6 +80,10 @@ body {
 
   h2 {
     font-size: 6.25em;
+
+    &.main_title {
+      color: $white_color;
+    }
   }
 
   h3 {
@@ -149,6 +153,69 @@ body {
             &:not(:last-child) {
               margin-right: 2.8em;
             }
+          }
+        }
+      }
+
+      div.flex_container {
+        margin-top: 3.5em;
+        align-items: initial;
+
+        .title_and_catchphrase_container {
+          .main_title {
+            span {
+              display: block;
+              margin-bottom: .25em;
+            }
+          }
+
+          .catchphrase {
+            margin-top: 1.5em;
+            font-size: 2.5em;
+          }
+        }
+
+        .list_links {
+          li {
+            &:not(:last-child) {
+              margin-bottom: 1.5625em;
+            }
+
+            &:first-child a {
+              background-image: url("../../resources/images/decors_egypte_small.svg");
+            }
+
+            &:nth-of-type(2) a {
+              background-image: url("../../resources/images/decors_perse_small.svg");
+            }
+
+            &:last-child a {
+              background-image: url("../../resources/images/decors_grece_small.svg");
+            }
+
+            .cards_link {
+              display: inline-block;
+              border-radius: .625em;
+              text-indent: -100000px;
+              background-position: center;
+              background-repeat: no-repeat;
+              width: 26.625em;
+              height: 15.25em;
+            }
+          }
+        }
+
+        .scroll_down {
+          position: absolute;
+          left: calc(50% - 151px);
+          bottom: 0;
+          background-image: url("../../resources/images/fleche_bas.svg");
+          background-repeat: no-repeat;
+          background-position: center bottom;
+          padding-bottom: calc(1.875em + 51px);
+
+          &_phrase {
+            font-size: 2.1875em;
           }
         }
       }
@@ -232,6 +299,7 @@ body {
         p {
           width: 11.68em;
         }
+
         a {
           margin-top: 1em;
         }
