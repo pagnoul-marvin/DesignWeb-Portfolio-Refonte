@@ -113,6 +113,25 @@
 .content {
   z-index: 1;
   position: relative;
+
+  div.flex_container {
+    margin-top: 3.5em;
+    align-items: initial;
+
+    .title_and_catchphrase_container {
+      .main_title {
+        span {
+          display: block;
+          margin-bottom: .25em;
+        }
+      }
+
+      .catchphrase {
+        margin-top: 1.5em;
+        font-size: 2.5em;
+      }
+    }
+  }
 }
 
 .background {
@@ -200,28 +219,20 @@ body {
       .content {
 
         div.flex_container {
-          margin-top: 3.5em;
-          align-items: initial;
-
-          .title_and_catchphrase_container {
-            .main_title {
-              span {
-                display: block;
-                margin-bottom: .25em;
-              }
-            }
-
-            .catchphrase {
-              margin-top: 1.5em;
-              font-size: 2.5em;
-            }
-          }
-
           .list_links {
+            transition: 0.3s ease-in-out;
+
+            &:hover li:hover {
+              transform: scale(1.05);
+            }
+
             li {
+              transition: 0.3s ease-in-out;
+
               &:not(:last-child) {
                 margin-bottom: 1.5625em;
               }
+
 
               &:first-child a {
                 background-image: url("../../resources/images/decors_egypte_small.svg");
@@ -260,6 +271,17 @@ body {
       .background {
         background-image: url("../../resources/images/décors égypte.png");
       }
+
+      .content {
+        div.flex_container {
+          gap: 16.8125em;
+
+          img {
+            width: 34.1875em;
+            height: 47.3125em;
+          }
+        }
+      }
     }
 
     &.projects {
@@ -283,10 +305,14 @@ body {
 
         &:nth-of-type(2) {
           transform: translateY(calc(50% + 1.875em));
+
+          &:hover {
+            transform: scale(1.05) translateY(calc(50% + 1.875em));
+          }
         }
 
         &:hover {
-          transform: scale(1.1);
+          transform: scale(1.05);
         }
 
         a {
@@ -350,7 +376,7 @@ body {
         }
 
         .cv_links_container {
-            padding: 0 30.6875em;
+          padding: 0 30.6875em;
         }
 
       }

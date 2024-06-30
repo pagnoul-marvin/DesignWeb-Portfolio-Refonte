@@ -1,4 +1,10 @@
-<?= get_header();
+<?=
+
+/*
+Template Name: Accueil
+*/
+
+get_header();
 
 $args = array(
     'post_type' => 'header',
