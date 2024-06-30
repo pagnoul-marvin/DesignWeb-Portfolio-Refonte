@@ -12,6 +12,14 @@
   font-size: 1.5625em;
 }
 
+.spacing {
+  margin-top: $section_margin;
+}
+
+.section {
+  padding: 0 5em;
+}
+
 .cta_links {
   font-size: 2.5em;
   padding: 1.25em;
@@ -44,6 +52,19 @@
   background-color: $dark_blue_color;
 }
 
+.transparent_links {
+  &_white {
+    padding: calc(1.25em - 2px);
+    border: 2px solid $white_color;
+  }
+
+  &_blue {
+    padding: calc(1.25em - 2px);
+    border: 2px solid $dark_blue_color;
+    color: $dark_blue_color;
+  }
+}
+
 .main_footer_link {
   font-family: 'Helvetica-Roman', 'Arial-Regular', 'Roboto-Regular', sans-serif;
   color: $white_color;
@@ -61,8 +82,79 @@
   align-items: center;
 }
 
+.progress_bar {
+  background-color: $light_blue_color;
+  height: .3em;
+  position: fixed;
+  bottom: 0;
+  width: 0;
+  border-radius: .15em;
+}
+
+.main_nav {
+  &_home_link {
+    background-image: url("../../resources/images/logo.svg");
+    width: 110px;
+    height: 81px;
+    text-indent: -10000px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+  }
+
+  &_list {
+    &_item {
+      &:not(:last-child) {
+        margin-right: 2.8em;
+      }
+    }
+  }
+}
+
+.content {
+  z-index: 1;
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(10px) brightness(55%);
+  width: 100%;
+  min-height: 100%;
+}
+
+.scroll_down {
+  position: absolute;
+  left: calc(50% - 151px);
+  bottom: 0;
+  background-image: url("../../resources/images/fleche_bas.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  padding-bottom: calc(1.875em + 51px);
+  animation: 1s ease-in-out infinite move_down;
+
+  &_phrase {
+    font-size: 2.1875em;
+  }
+}
+
+@keyframes move_down {
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 body {
   font-family: 'Helvetica-Roman', 'Arial-Regular', 'Roboto-Regular', sans-serif;
+  background-color: $light_grey_color;
 
   h1, h2, h3 {
     font-family: 'HelveticBold', 'Arial-Bold', 'Roboto-Bold', sans-serif;
@@ -80,9 +172,11 @@ body {
 
   h2 {
     font-size: 6.25em;
+    margin-bottom: 1.5em;
 
     &.main_title {
       color: $white_color;
+      margin-bottom: 0;
     }
   }
 
@@ -101,6 +195,58 @@ body {
     &.home {
       .background {
         background-image: url("../../resources/images/décors rome.png");
+      }
+
+      .content {
+
+        div.flex_container {
+          margin-top: 3.5em;
+          align-items: initial;
+
+          .title_and_catchphrase_container {
+            .main_title {
+              span {
+                display: block;
+                margin-bottom: .25em;
+              }
+            }
+
+            .catchphrase {
+              margin-top: 1.5em;
+              font-size: 2.5em;
+            }
+          }
+
+          .list_links {
+            li {
+              &:not(:last-child) {
+                margin-bottom: 1.5625em;
+              }
+
+              &:first-child a {
+                background-image: url("../../resources/images/decors_egypte_small.svg");
+              }
+
+              &:nth-of-type(2) a {
+                background-image: url("../../resources/images/decors_perse_small.svg");
+              }
+
+              &:last-child a {
+                background-image: url("../../resources/images/decors_grece_small.svg");
+              }
+
+              .cards_link {
+                display: inline-block;
+                border-radius: .625em;
+                text-indent: -100000px;
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 26.625em;
+                height: 15.25em;
+              }
+            }
+          }
+        }
       }
     }
 
@@ -121,112 +267,95 @@ body {
         background-image: url("../../resources/images/décors perse.png");
       }
     }
-
-    .background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      filter: blur(10px) brightness(55%);
-      width: 100%;
-      min-height: 100%;
-    }
-
-    .content {
-      z-index: 1;
-      position: relative;
-
-      .main_nav {
-        &_home_link {
-          background-image: url("../../resources/images/logo.svg");
-          width: 110px;
-          height: 81px;
-          text-indent: -10000px;
-          overflow: hidden;
-          background-repeat: no-repeat;
-        }
-
-        &_list {
-          &_item {
-            &:not(:last-child) {
-              margin-right: 2.8em;
-            }
-          }
-        }
-      }
-
-      div.flex_container {
-        margin-top: 3.5em;
-        align-items: initial;
-
-        .title_and_catchphrase_container {
-          .main_title {
-            span {
-              display: block;
-              margin-bottom: .25em;
-            }
-          }
-
-          .catchphrase {
-            margin-top: 1.5em;
-            font-size: 2.5em;
-          }
-        }
-
-        .list_links {
-          li {
-            &:not(:last-child) {
-              margin-bottom: 1.5625em;
-            }
-
-            &:first-child a {
-              background-image: url("../../resources/images/decors_egypte_small.svg");
-            }
-
-            &:nth-of-type(2) a {
-              background-image: url("../../resources/images/decors_perse_small.svg");
-            }
-
-            &:last-child a {
-              background-image: url("../../resources/images/decors_grece_small.svg");
-            }
-
-            .cards_link {
-              display: inline-block;
-              border-radius: .625em;
-              text-indent: -100000px;
-              background-position: center;
-              background-repeat: no-repeat;
-              width: 26.625em;
-              height: 15.25em;
-            }
-          }
-        }
-
-        .scroll_down {
-          position: absolute;
-          left: calc(50% - 151px);
-          bottom: 0;
-          background-image: url("../../resources/images/fleche_bas.svg");
-          background-repeat: no-repeat;
-          background-position: center bottom;
-          padding-bottom: calc(1.875em + 51px);
-
-          &_phrase {
-            font-size: 2.1875em;
-          }
-        }
-      }
-    }
-
   }
 
   main {
-    background-color: $light_grey_color;
     color: $dark_blue_color;
     margin: $section_margin 0;
+
+    .last_projects_container {
+      flex-wrap: wrap;
+      row-gap: 3.75em;
+
+      .last_project {
+        display: inline-block;
+        transition: .3s ease-in-out;
+
+        &:nth-of-type(2) {
+          transform: translateY(calc(50% + 1.875em));
+        }
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        a {
+          width: 53.75em;
+          min-height: 41.625em;
+          text-indent: -100000px;
+          display: inline-block;
+          background-repeat: no-repeat;
+          background-position: top center;
+          border-radius: 0.625em;
+        }
+
+        &:first-of-type a {
+          background-image: url("../../resources/images/piédestal avec cv.png");
+        }
+
+        &:nth-of-type(2) a {
+          background-image: url("../../resources/images/piédestal avec portfolio.png");
+        }
+
+        &:last-of-type a {
+          background-image: url("../../resources/images/piédestal avec sef.png");
+        }
+      }
+    }
+
+    .home_cv {
+      width: 100vw;
+      padding: 10.625em 0;
+      text-align: center;
+      position: relative;
+
+      .cv_background {
+        background-image: url("../../resources/images/cv_landing_page.png");
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: brightness(55%);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .home_cv_container {
+        position: relative;
+        z-index: 1;
+
+        h2, p {
+          color: $white_color;
+        }
+
+        h2 {
+          margin-bottom: .7em;
+        }
+
+        p {
+          font-size: 2.5em;
+          margin-bottom: 5em;
+        }
+
+        .cv_links_container {
+            padding: 0 30.6875em;
+        }
+
+      }
+    }
+
   }
 
   footer {

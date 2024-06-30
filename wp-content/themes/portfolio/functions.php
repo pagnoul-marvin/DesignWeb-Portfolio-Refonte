@@ -38,8 +38,11 @@ function dw_get_navigation_links(string $location): array
 
 function dw_component(string $component, array $arguments = []): void
 {
-    if(! ($path = realpath(__DIR__ . '/components/' . $component . '.php'))) {
-        throw new Exception('Component "'. $component .'" is not defined.');
+    $path = get_template_directory() . '/resources/components/' . $component . '.php';
+
+    if (!file_exists($path)) {
+        echo 'Component "' . $component . '" is not defined.';
+        return;
     }
 
     extract($arguments);
@@ -47,7 +50,8 @@ function dw_component(string $component, array $arguments = []): void
     include($path);
 }
 
-function give_header_class (): string
+
+function give_header_class(): string
 {
     $page_id = get_the_ID();
 
@@ -55,11 +59,11 @@ function give_header_class (): string
 
     if ($page_id === 7 || $page_id === 15 || $page_id === 33) {
         $header_class .= 'home';
-    }elseif ($page_id === 11) {
+    } elseif ($page_id === 11) {
         $header_class .= 'about';
-    }elseif ($page_id === 9) {
+    } elseif ($page_id === 9) {
         $header_class .= 'contact';
-    }else if ($page_id === 13) {
+    } else if ($page_id === 13) {
         $header_class .= 'projects';
     }
 

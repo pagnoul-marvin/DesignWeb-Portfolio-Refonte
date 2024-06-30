@@ -10,6 +10,14 @@
   font-size: 1.5625em;
 }
 
+.spacing {
+  margin-top: 12.5em;
+}
+
+.section {
+  padding: 0 5em;
+}
+
 .cta_links {
   font-size: 2.5em;
   padding: 1.25em;
@@ -39,6 +47,16 @@
   background-color: #09214A;
 }
 
+.transparent_links_white {
+  padding: calc(1.25em - 2px);
+  border: 2px solid rgb(255, 255, 255);
+}
+.transparent_links_blue {
+  padding: calc(1.25em - 2px);
+  border: 2px solid #09214A;
+  color: #09214A;
+}
+
 .main_footer_link {
   font-family: "Helvetica-Roman", "Arial-Regular", "Roboto-Regular", sans-serif;
   color: rgb(255, 255, 255);
@@ -55,8 +73,69 @@
   align-items: center;
 }
 
+.progress_bar {
+  background-color: #254494;
+  height: 0.3em;
+  position: fixed;
+  bottom: 0;
+  width: 0;
+  border-radius: 0.15em;
+}
+
+.main_nav_home_link {
+  background-image: url("../../resources/images/logo.svg");
+  width: 110px;
+  height: 81px;
+  text-indent: -10000px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+.main_nav_list_item:not(:last-child) {
+  margin-right: 2.8em;
+}
+
+.content {
+  z-index: 1;
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(10px) brightness(55%);
+  width: 100%;
+  min-height: 100%;
+}
+
+.scroll_down {
+  position: absolute;
+  left: calc(50% - 151px);
+  bottom: 0;
+  background-image: url("../../resources/images/fleche_bas.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  padding-bottom: calc(1.875em + 51px);
+  animation: 1s ease-in-out infinite move_down;
+}
+.scroll_down_phrase {
+  font-size: 2.1875em;
+}
+
+@keyframes move_down {
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 body {
   font-family: "Helvetica-Roman", "Arial-Regular", "Roboto-Regular", sans-serif;
+  background-color: #dcdcdc;
 }
 body h1, body h2, body h3 {
   font-family: "HelveticBold", "Arial-Bold", "Roboto-Bold", sans-serif;
@@ -71,9 +150,11 @@ body h1 {
 }
 body h2 {
   font-size: 6.25em;
+  margin-bottom: 1.5em;
 }
 body h2.main_title {
   color: rgb(255, 255, 255);
+  margin-bottom: 0;
 }
 body h3 {
   font-size: 2.5em;
@@ -89,6 +170,39 @@ body header {
 body header.home .background {
   background-image: url("../../resources/images/décors rome.png");
 }
+body header.home .content div.flex_container {
+  margin-top: 3.5em;
+  align-items: initial;
+}
+body header.home .content div.flex_container .title_and_catchphrase_container .main_title span {
+  display: block;
+  margin-bottom: 0.25em;
+}
+body header.home .content div.flex_container .title_and_catchphrase_container .catchphrase {
+  margin-top: 1.5em;
+  font-size: 2.5em;
+}
+body header.home .content div.flex_container .list_links li:not(:last-child) {
+  margin-bottom: 1.5625em;
+}
+body header.home .content div.flex_container .list_links li:first-child a {
+  background-image: url("../../resources/images/decors_egypte_small.svg");
+}
+body header.home .content div.flex_container .list_links li:nth-of-type(2) a {
+  background-image: url("../../resources/images/decors_perse_small.svg");
+}
+body header.home .content div.flex_container .list_links li:last-child a {
+  background-image: url("../../resources/images/decors_grece_small.svg");
+}
+body header.home .content div.flex_container .list_links li .cards_link {
+  display: inline-block;
+  border-radius: 0.625em;
+  text-indent: -100000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 26.625em;
+  height: 15.25em;
+}
 body header.contact .background {
   background-image: url("../../resources/images/décors grèce.png");
 }
@@ -98,81 +212,76 @@ body header.about .background {
 body header.projects .background {
   background-image: url("../../resources/images/décors perse.png");
 }
-body header .background {
+body main {
+  color: #09214A;
+  margin: 12.5em 0;
+}
+body main .last_projects_container {
+  flex-wrap: wrap;
+  row-gap: 3.75em;
+}
+body main .last_projects_container .last_project {
+  display: inline-block;
+  transition: 0.3s ease-in-out;
+}
+body main .last_projects_container .last_project:nth-of-type(2) {
+  transform: translateY(calc(50% + 1.875em));
+}
+body main .last_projects_container .last_project:hover {
+  transform: scale(1.1);
+}
+body main .last_projects_container .last_project a {
+  width: 53.75em;
+  min-height: 41.625em;
+  text-indent: -100000px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: top center;
+  border-radius: 0.625em;
+}
+body main .last_projects_container .last_project:first-of-type a {
+  background-image: url("../../resources/images/piédestal avec cv.png");
+}
+body main .last_projects_container .last_project:nth-of-type(2) a {
+  background-image: url("../../resources/images/piédestal avec portfolio.png");
+}
+body main .last_projects_container .last_project:last-of-type a {
+  background-image: url("../../resources/images/piédestal avec sef.png");
+}
+body main .home_cv {
+  width: 100vw;
+  padding: 10.625em 0;
+  text-align: center;
+  position: relative;
+}
+body main .home_cv .cv_background {
+  background-image: url("../../resources/images/cv_landing_page.png");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(55%);
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: blur(10px) brightness(55%);
-  width: 100%;
-  min-height: 100%;
 }
-body header .content {
-  z-index: 1;
+body main .home_cv .home_cv_container {
   position: relative;
+  z-index: 1;
 }
-body header .content .main_nav_home_link {
-  background-image: url("../../resources/images/logo.svg");
-  width: 110px;
-  height: 81px;
-  text-indent: -10000px;
-  overflow: hidden;
-  background-repeat: no-repeat;
+body main .home_cv .home_cv_container h2, body main .home_cv .home_cv_container p {
+  color: rgb(255, 255, 255);
 }
-body header .content .main_nav_list_item:not(:last-child) {
-  margin-right: 2.8em;
+body main .home_cv .home_cv_container h2 {
+  margin-bottom: 0.7em;
 }
-body header .content div.flex_container {
-  margin-top: 3.5em;
-  align-items: initial;
-}
-body header .content div.flex_container .title_and_catchphrase_container .main_title span {
-  display: block;
-  margin-bottom: 0.25em;
-}
-body header .content div.flex_container .title_and_catchphrase_container .catchphrase {
-  margin-top: 1.5em;
+body main .home_cv .home_cv_container p {
   font-size: 2.5em;
+  margin-bottom: 5em;
 }
-body header .content div.flex_container .list_links li:not(:last-child) {
-  margin-bottom: 1.5625em;
-}
-body header .content div.flex_container .list_links li:first-child a {
-  background-image: url("../../resources/images/decors_egypte_small.svg");
-}
-body header .content div.flex_container .list_links li:nth-of-type(2) a {
-  background-image: url("../../resources/images/decors_perse_small.svg");
-}
-body header .content div.flex_container .list_links li:last-child a {
-  background-image: url("../../resources/images/decors_grece_small.svg");
-}
-body header .content div.flex_container .list_links li .cards_link {
-  display: inline-block;
-  border-radius: 0.625em;
-  text-indent: -100000px;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 26.625em;
-  height: 15.25em;
-}
-body header .content div.flex_container .scroll_down {
-  position: absolute;
-  left: calc(50% - 151px);
-  bottom: 0;
-  background-image: url("../../resources/images/fleche_bas.svg");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  padding-bottom: calc(1.875em + 51px);
-}
-body header .content div.flex_container .scroll_down_phrase {
-  font-size: 2.1875em;
-}
-body main {
-  background-color: #dcdcdc;
-  color: #09214A;
-  margin: 12.5em 0;
+body main .home_cv .home_cv_container .cv_links_container {
+  padding: 0 30.6875em;
 }
 body footer {
   background-color: #09214A;

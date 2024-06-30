@@ -77,5 +77,7 @@
 
 </footer>
 
+<div class="progress_bar" id="progress_bar"></div>
+
 </body>
 </html>
