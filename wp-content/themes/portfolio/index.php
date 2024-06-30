@@ -38,7 +38,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
         <div class="list_links">
 
-            <ul>
+            <ul class="flex_container">
 
                 <li><a class="cards_link" href="<?= get_field('home_header_first_link')['url'] ?>"
                        title="Aller vers la page À propos"><?= get_field('home_header_first_link')['title'] ?></a></li>
@@ -53,8 +53,6 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
         </div>
 
-        <?php dw_component('scroll_down') ?>
-
     </div>
 
 <?php endwhile; ?>
@@ -64,6 +62,8 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
     </div>
 
     <div class="background"></div>
+<?php dw_component('scroll_down') ?>
+
 
     </header>
 
