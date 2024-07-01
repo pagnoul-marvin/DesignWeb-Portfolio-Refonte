@@ -30,6 +30,8 @@
   font-family: "Helvetica-Bold", "Arial-Bold", "Roboto-Bold", sans-serif;
   font-weight: bold;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  max-width: 9.475em;
+  align-content: center;
 }
 .cta_links:hover {
   transform: scale(1.05);
@@ -83,6 +85,16 @@
   border-radius: 0.15em;
 }
 
+.go_back a.go_back_link {
+  padding: 0 0 0 4em;
+  box-shadow: unset;
+  color: #09214A;
+  background-image: url("../../resources/images/go_back_button_arrow.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  max-width: unset;
+}
+
 .main_nav_home_link {
   background-image: url("../../resources/images/logo.svg");
   width: 110px;
@@ -125,6 +137,9 @@
 .content > div.flex_container .list_links ul li {
   transition: 0.3s ease-in-out;
 }
+.content > div.flex_container .list_links ul li a {
+  background-size: cover;
+}
 .content > div.flex_container .list_links ul li:hover {
   transform: scale(1.05);
 }
@@ -159,6 +174,27 @@
   min-height: 100%;
 }
 
+.slider_button {
+  position: absolute;
+  top: calc(50% - 50px);
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #254494;
+  border-radius: 50%;
+  border: none;
+}
+.slider_button:first-of-type {
+  background-image: url("../../resources/images/right_arrow.svg");
+  left: -20px;
+}
+.slider_button:last-of-type {
+  right: 0;
+  background-image: url("../../resources/images/left_arrow.svg");
+}
+
 .scroll_down {
   position: absolute;
   left: calc(50% - 151px);
@@ -185,6 +221,7 @@
 body {
   font-family: "Helvetica-Roman", "Arial-Regular", "Roboto-Regular", sans-serif;
   background-color: #dcdcdc;
+  overflow-x: hidden;
 }
 body h1, body h2, body h3 {
   font-family: "HelveticBold", "Arial-Bold", "Roboto-Bold", sans-serif;
@@ -222,9 +259,6 @@ body header.home .background {
 body header.contact .background {
   background-image: url("../../resources/images/décors grèce.png");
 }
-body header.contact .content div.flex_container .list_links li a {
-  background-size: cover;
-}
 body header.contact .content div.flex_container .list_links li:first-child a {
   background-image: url("../../resources/images/tel.png");
 }
@@ -241,9 +275,6 @@ body header.about .content div.flex_container img {
 body header.projects .background {
   background-image: url("../../resources/images/décors perse.png");
 }
-body header.projects .content div.flex_container .list_links li a {
-  background-size: cover;
-}
 body header.projects .content div.flex_container .list_links li:first-child a {
   background-image: url("../../resources/images/cv_landing_page.png");
 }
@@ -256,10 +287,22 @@ body header.projects .content div.flex_container .list_links li:last-child a {
 body header.project_cv .background {
   background-image: url("../../resources/images/cv_landing_page.png");
 }
+body header.project_cv .content div.flex_container .list_links li:first-child a {
+  background-image: url("../../resources/images/ttw_landing_page.png");
+}
+body header.project_cv .content div.flex_container .list_links li:last-child a {
+  background-image: url("../../resources/images/cv_landing_page.png");
+}
 body header.project_portfolio .background {
   background-image: url("../../resources/images/portfolio.png");
 }
 body header.project_sef .background {
+  background-image: url("../../resources/images/sef_final_logo.png");
+}
+body header.project_sef .content div.flex_container .list_links li:first-child a {
+  background-image: url("../../resources/images/sef_huy.png");
+}
+body header.project_sef .content div.flex_container .list_links li:last-child a {
   background-image: url("../../resources/images/sef_final_logo.png");
 }
 body main {
@@ -469,33 +512,66 @@ body main .form_container form fieldset .label_input .label_positioning {
   left: 2em;
   padding: 0 0.8em;
 }
-body main .projects_container {
+body main .projects_container, body main .presentation_container, body main .language_container {
   flex-direction: column;
   gap: 7.5em;
 }
-body main .projects_container article:nth-child(even) .project_content {
+body main .projects_container article:nth-child(even) .project_content, body main .projects_container article:nth-child(even) .presentation_content, body main .projects_container article:nth-child(even) .language_content, body main .presentation_container article:nth-child(even) .project_content, body main .presentation_container article:nth-child(even) .presentation_content, body main .presentation_container article:nth-child(even) .language_content, body main .language_container article:nth-child(even) .project_content, body main .language_container article:nth-child(even) .presentation_content, body main .language_container article:nth-child(even) .language_content {
   flex-flow: row-reverse;
 }
-body main .projects_container article .project_content {
+body main .projects_container article .project_content, body main .projects_container article .presentation_content, body main .projects_container article .language_content, body main .presentation_container article .project_content, body main .presentation_container article .presentation_content, body main .presentation_container article .language_content, body main .language_container article .project_content, body main .language_container article .presentation_content, body main .language_container article .language_content {
   align-items: initial;
   gap: 3.75em;
 }
-body main .projects_container article .project_content img {
-  width: 50%;
+body main .projects_container article .project_content img, body main .projects_container article .presentation_content img, body main .projects_container article .language_content img, body main .presentation_container article .project_content img, body main .presentation_container article .presentation_content img, body main .presentation_container article .language_content img, body main .language_container article .project_content img, body main .language_container article .presentation_content img, body main .language_container article .language_content img {
+  max-width: 52.75em;
   height: auto;
   border-radius: 0.625em;
 }
-body main .projects_container article .project_content .text_and_links {
+body main .projects_container article .project_content .text_and_links, body main .projects_container article .presentation_content .text_and_links, body main .projects_container article .language_content .text_and_links, body main .presentation_container article .project_content .text_and_links, body main .presentation_container article .presentation_content .text_and_links, body main .presentation_container article .language_content .text_and_links, body main .language_container article .project_content .text_and_links, body main .language_container article .presentation_content .text_and_links, body main .language_container article .language_content .text_and_links {
   justify-content: unset;
   gap: 3.75em;
   flex-direction: column;
 }
-body main .projects_container article .project_content .text_and_links p {
+body main .projects_container article .project_content .text_and_links p, body main .projects_container article .presentation_content .text_and_links p, body main .projects_container article .language_content .text_and_links p, body main .presentation_container article .project_content .text_and_links p, body main .presentation_container article .presentation_content .text_and_links p, body main .presentation_container article .language_content .text_and_links p, body main .language_container article .project_content .text_and_links p, body main .language_container article .presentation_content .text_and_links p, body main .language_container article .language_content .text_and_links p {
   font-size: 1.5625em;
 }
-body main .projects_container article .project_content .text_and_links .links_container {
+body main .projects_container article .project_content .text_and_links .links_container, body main .projects_container article .presentation_content .text_and_links .links_container, body main .projects_container article .language_content .text_and_links .links_container, body main .presentation_container article .project_content .text_and_links .links_container, body main .presentation_container article .presentation_content .text_and_links .links_container, body main .presentation_container article .language_content .text_and_links .links_container, body main .language_container article .project_content .text_and_links .links_container, body main .language_container article .presentation_content .text_and_links .links_container, body main .language_container article .language_content .text_and_links .links_container {
   align-items: initial;
   width: 100%;
+}
+body main .language_container .language_content {
+  flex-flow: row-reverse;
+}
+body main .slider_container {
+  position: relative;
+}
+body main .slider_container .slideshow {
+  width: 53.75em;
+  height: 41.625em;
+  position: relative;
+}
+body main .slider_container .slideshow_content {
+  display: inline-block;
+  width: calc(300% + 1.5625em + 1.5625em);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s ease-in-out;
+}
+body main .slider_container .slideshow_content li {
+  display: inline-block;
+  height: 100%;
+  width: 860px;
+}
+body main .slider_container .slideshow_content li:not(:last-child) {
+  margin-right: 1.5625em;
+}
+body main .slider_container .slideshow_content li img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.625em;
 }
 body main .contact_me_container {
   text-align: center;
