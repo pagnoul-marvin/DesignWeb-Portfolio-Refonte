@@ -1,0 +1,72 @@
+<?=
+
+/*
+Template Name: Project cv
+*/
+
+get_header();
+
+$args = array(
+    'post_type' => 'header',
+    'title' => 'CV',
+    'posts_per_page' => 1
+);
+
+// Effectuer la requête WP_Query
+$header_query = new WP_Query($args);
+
+
+if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_query->the_post(); ?>
+
+    <div class="flex_container">
+
+        <div class="title_and_catchphrase_container">
+
+            <h2 class="main_title">
+
+                <?= get_field('cv_header_title') ?>
+
+            </h2>
+
+            <p class="catchphrase"><?= get_field('cv_header_catchphrase') ?></p>
+
+
+        </div>
+
+        <div class="list_links">
+
+            <ul class="flex_container">
+
+                <li><a class="cards_link" href="<?= get_field('cv_header_first_link')['url'] ?>"
+                       title="Aller vers la page À propos"><?= get_field('cv_header_first_link')['title'] ?></a></li>
+                <li><a class="cards_link" href="<?= get_field('cv_header_second_link')['url'] ?>"
+                       title="Aller vers la page Mes projets"><?= get_field('cv_header_second_link')['title'] ?></a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+<?php endwhile; ?>
+
+<?php endif; ?>
+
+</div>
+
+<div class="background"></div>
+<?php dw_component('scroll_down') ?>
+
+</header>
+
+<main>
+
+    <?php dw_component('go_back_nav') ?>
+
+
+    <?php dw_component('contact_me') ?>
+
+</main>
+
+<?php get_footer() ?>

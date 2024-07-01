@@ -22,7 +22,7 @@
 
 .cta_links {
   font-size: 2.5em;
-  padding: 1.25em;
+  padding: 1.25em .55em;
   color: $white_color;
   text-decoration: none;
   transition: 0.3s ease-in-out;
@@ -31,6 +31,7 @@
   border-radius: .25em;
   font-family: 'Helvetica-Bold', 'Arial-Bold', 'Roboto-Bold', sans-serif;
   font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 
   &:hover {
     transform: scale(1.05);
@@ -43,7 +44,6 @@
   &_footer {
     background-color: $light_blue_color;
     font-size: 1.875em;
-
     border-radius: .333em;
   }
 }
@@ -54,12 +54,12 @@
 
 .transparent_links {
   &_white {
-    padding: calc(1.25em - 2px);
+    padding: calc(1.25em - 2px) .55em;
     border: 2px solid $white_color;
   }
 
   &_blue {
-    padding: calc(1.25em - 2px);
+    padding: calc(1.25em - 2px) .55em;
     border: 2px solid $dark_blue_color;
     color: $dark_blue_color;
   }
@@ -202,6 +202,7 @@
 
   &_phrase {
     font-size: 2.1875em;
+    color: $white_color;
   }
 }
 
@@ -304,6 +305,46 @@ body {
     &.projects {
       .background {
         background-image: url("../../resources/images/décors perse.png");
+      }
+
+      .content {
+        div.flex_container {
+          .list_links {
+            li a {
+              background-size: cover;
+            }
+
+            li:first-child a {
+              background-image: url("../../resources/images/cv_landing_page.png");
+            }
+
+            li:nth-child(2) a {
+              background-image: url("../../resources/images/portfolio.png");
+            }
+
+            li:last-child a {
+              background-image: url("../../resources/images/sef_final_logo.png");
+            }
+          }
+        }
+      }
+    }
+
+    &.project_cv {
+      .background {
+        background-image: url("../../resources/images/cv_landing_page.png");
+      }
+    }
+
+    &.project_portfolio {
+      .background {
+        background-image: url("../../resources/images/portfolio.png");
+      }
+    }
+
+    &.project_sef {
+      .background {
+        background-image: url("../../resources/images/sef_final_logo.png");
       }
     }
   }
@@ -512,6 +553,92 @@ body {
 
             p {
               font-size: 1.5625em;
+            }
+          }
+        }
+      }
+    }
+
+    .form_container {
+      form {
+        font-size: 1.5625em;
+        flex-direction: column;
+        align-items: initial;
+        row-gap: 4.8em;
+
+        fieldset {
+          flex-wrap: wrap;
+          align-items: initial;
+          gap: 3em;
+
+          legend {
+            font-family: 'Helvetica-Bold', 'Arial-Bold', 'Roboto-Bold', sans-serif;
+            font-weight: bold;
+            font-size: 2.5em;
+            margin-bottom: 1.5em;
+          }
+
+          .label_input {
+            flex-basis: 32em;
+            position: relative;
+
+            input, textarea {
+              min-height: 8.9375em;
+              width: calc(100% - 4em - 4px);
+              padding: 0 2em;
+              background-color: transparent;
+              border: 2px solid $dark_blue_color;
+              border-radius: .4em;
+            }
+
+            textarea {
+              padding-top: 4em;
+            }
+
+            .label_positioning {
+              background-color: $light_grey_color;
+              position: absolute;
+              z-index: 1;
+              top: -12.5px;
+              left: 2em;
+              padding: 0 .8em;
+            }
+          }
+        }
+      }
+    }
+
+    .projects_container {
+      flex-direction: column;
+      gap: 7.5em;
+
+      article {
+        &:nth-child(even) .project_content {
+          flex-flow: row-reverse;
+        }
+
+        .project_content {
+          align-items: initial;
+          gap: 3.75em;
+
+          img {
+            width: 50%;
+            height: auto;
+            border-radius: .625em;
+          }
+
+          .text_and_links {
+            justify-content: unset;
+            gap: 3.75em;
+            flex-direction: column;
+
+            p {
+              font-size: 1.5625em;
+            }
+
+            .links_container {
+              align-items: initial;
+              width: 100%;
             }
           }
         }

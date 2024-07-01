@@ -17,7 +17,6 @@ $header_query = new WP_Query($args);
 
 if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_query->the_post(); ?>
 
-
     <div class="flex_container">
 
         <div class="title_and_catchphrase_container">
@@ -58,17 +57,77 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
 <?php endwhile; endif; ?>
 
-</div>
+    </div>
 
-<div class="background"></div>
+    <div class="background"></div>
 <?php dw_component('scroll_down') ?>
 
-</header>
+    </header>
 
-<main>
+    <main>
 
+        <section class="section">
 
+            <h2>Me contacter par mail</h2>
 
-</main>
+            <div class="form_container">
+
+                <form action="" method="post" class="flex_container">
+
+                    <p>Les champs dot&eacute; d&rsquo;une &laquo;&ast;&raquo; sont requis.</p>
+
+                    <fieldset class="flex_container">
+
+                        <legend>Vos coordonn&eacute;es</legend>
+
+                        <div class="label_input">
+
+                            <label class="label_positioning" for="firstname">Votre pr&eacute;nom&ast;&nbsp;: 255 caract&egrave;res maximum</label>
+
+                            <input type="text" id="firstname" required placeholder="Ex : Jacques">
+
+                        </div>
+
+                        <div class="label_input">
+
+                            <label class="label_positioning" for="lastname">Votre nom&ast;&nbsp;: 255 caract&egrave;res maximum</label>
+
+                            <input type="text" id="lastname" required placeholder="Ex : Dupont">
+
+                        </div>
+
+                        <div class="label_input">
+
+                            <label class="label_positioning" for="mail">Votre adresse mail&ast;&nbsp;: Votre adresse mail doit &ecirc;tre
+                                valide</label>
+
+                            <input type="email" id="mail" required placeholder="Ex : Jacques">
+
+                        </div>
+
+                    </fieldset>
+
+                    <fieldset class="flex_container">
+
+                        <legend>Votre message</legend>
+
+                        <div class="label_input">
+
+                            <label class="label_positioning" for="message">Votre message&ast;&nbsp;:</label>
+
+                            <textarea id="message" required rows="10"
+                                      placeholder="Ex : Je souhaite vous contacter afin de ..."></textarea>
+
+                        </div>
+
+                    </fieldset>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
 
 <?= get_footer() ?>

@@ -65,6 +65,12 @@ function give_header_class(): string
         $header_class .= 'contact';
     } else if ($page_id === 13) {
         $header_class .= 'projects';
+    } else if ($page_id === 116) {
+        $header_class .= 'project_cv';
+    } else if ($page_id === 118) {
+        $header_class .= 'project_portfolio';
+    } else if ($page_id === 120) {
+        $header_class .= 'project_sef';
     }
 
     return $header_class;

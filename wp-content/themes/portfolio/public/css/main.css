@@ -20,7 +20,7 @@
 
 .cta_links {
   font-size: 2.5em;
-  padding: 1.25em;
+  padding: 1.25em 0.55em;
   color: rgb(255, 255, 255);
   text-decoration: none;
   transition: 0.3s ease-in-out;
@@ -29,6 +29,7 @@
   border-radius: 0.25em;
   font-family: "Helvetica-Bold", "Arial-Bold", "Roboto-Bold", sans-serif;
   font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 .cta_links:hover {
   transform: scale(1.05);
@@ -48,11 +49,11 @@
 }
 
 .transparent_links_white {
-  padding: calc(1.25em - 2px);
+  padding: calc(1.25em - 2px) 0.55em;
   border: 2px solid rgb(255, 255, 255);
 }
 .transparent_links_blue {
-  padding: calc(1.25em - 2px);
+  padding: calc(1.25em - 2px) 0.55em;
   border: 2px solid #09214A;
   color: #09214A;
 }
@@ -170,6 +171,7 @@
 }
 .scroll_down_phrase {
   font-size: 2.1875em;
+  color: rgb(255, 255, 255);
 }
 
 @keyframes move_down {
@@ -238,6 +240,27 @@ body header.about .content div.flex_container img {
 }
 body header.projects .background {
   background-image: url("../../resources/images/décors perse.png");
+}
+body header.projects .content div.flex_container .list_links li a {
+  background-size: cover;
+}
+body header.projects .content div.flex_container .list_links li:first-child a {
+  background-image: url("../../resources/images/cv_landing_page.png");
+}
+body header.projects .content div.flex_container .list_links li:nth-child(2) a {
+  background-image: url("../../resources/images/portfolio.png");
+}
+body header.projects .content div.flex_container .list_links li:last-child a {
+  background-image: url("../../resources/images/sef_final_logo.png");
+}
+body header.project_cv .background {
+  background-image: url("../../resources/images/cv_landing_page.png");
+}
+body header.project_portfolio .background {
+  background-image: url("../../resources/images/portfolio.png");
+}
+body header.project_sef .background {
+  background-image: url("../../resources/images/sef_final_logo.png");
 }
 body main {
   color: #09214A;
@@ -405,6 +428,74 @@ body main .scholar_career_container ul li .scholar_formation time {
 }
 body main .scholar_career_container ul li .scholar_formation p {
   font-size: 1.5625em;
+}
+body main .form_container form {
+  font-size: 1.5625em;
+  flex-direction: column;
+  align-items: initial;
+  row-gap: 4.8em;
+}
+body main .form_container form fieldset {
+  flex-wrap: wrap;
+  align-items: initial;
+  gap: 3em;
+}
+body main .form_container form fieldset legend {
+  font-family: "Helvetica-Bold", "Arial-Bold", "Roboto-Bold", sans-serif;
+  font-weight: bold;
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+}
+body main .form_container form fieldset .label_input {
+  flex-basis: 32em;
+  position: relative;
+}
+body main .form_container form fieldset .label_input input, body main .form_container form fieldset .label_input textarea {
+  min-height: 8.9375em;
+  width: calc(100% - 4em - 4px);
+  padding: 0 2em;
+  background-color: transparent;
+  border: 2px solid #09214A;
+  border-radius: 0.4em;
+}
+body main .form_container form fieldset .label_input textarea {
+  padding-top: 4em;
+}
+body main .form_container form fieldset .label_input .label_positioning {
+  background-color: #dcdcdc;
+  position: absolute;
+  z-index: 1;
+  top: -12.5px;
+  left: 2em;
+  padding: 0 0.8em;
+}
+body main .projects_container {
+  flex-direction: column;
+  gap: 7.5em;
+}
+body main .projects_container article:nth-child(even) .project_content {
+  flex-flow: row-reverse;
+}
+body main .projects_container article .project_content {
+  align-items: initial;
+  gap: 3.75em;
+}
+body main .projects_container article .project_content img {
+  width: 50%;
+  height: auto;
+  border-radius: 0.625em;
+}
+body main .projects_container article .project_content .text_and_links {
+  justify-content: unset;
+  gap: 3.75em;
+  flex-direction: column;
+}
+body main .projects_container article .project_content .text_and_links p {
+  font-size: 1.5625em;
+}
+body main .projects_container article .project_content .text_and_links .links_container {
+  align-items: initial;
+  width: 100%;
 }
 body main .contact_me_container {
   text-align: center;
