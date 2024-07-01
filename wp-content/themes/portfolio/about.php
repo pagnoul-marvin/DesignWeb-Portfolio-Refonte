@@ -71,6 +71,12 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
         'order' => 'ASC',
     ]);
 
+    $scholar_career = new WP_Query([
+        'post_type' => 'scholar-career',
+        'post_status' => 'publish',
+        'posts_per_page' => 1,
+    ]);
+
     ?>
 
 
@@ -107,9 +113,9 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
         <h2>Quelques soft skills</h2>
 
-            <div class="soft_skills_container flex_container">
+        <div class="soft_skills_container flex_container">
 
-                <?php if ($soft_skills->have_posts()): while ($soft_skills->have_posts()):$soft_skills->the_post(); ?>
+            <?php if ($soft_skills->have_posts()): while ($soft_skills->have_posts()):$soft_skills->the_post(); ?>
 
                 <article>
 
@@ -119,9 +125,9 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                 </article>
 
-                <?php endwhile; endif; ?>
+            <?php endwhile; endif; ?>
 
-            </div>
+        </div>
 
     </section>
 
@@ -147,6 +153,74 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
     </section>
 
+    <section class="section spacing">
+
+        <h2>Ma carri&egrave;re scolaire</h2>
+
+        <div class="scholar_career_container flex_container">
+
+            <?php if ($scholar_career->have_posts()): while ($scholar_career->have_posts()): $scholar_career->the_post(); ?>
+
+                <ul class="flex_container">
+
+                    <li class="flex_container">
+
+                        <div class="scholar_formation">
+
+                            <time><?= get_field('first_date') ?></time>
+
+                            <p><?= get_field('first_description') ?></p>
+
+                        </div>
+
+                    </li>
+
+                    <li class="flex_container">
+
+                        <div class="scholar_formation">
+
+                            <time datetime="2022"><?= get_field('second_date') ?></time>
+
+                            <p><?= get_field('second_description') ?></p>
+
+                        </div>
+
+                    </li>
+
+                    <li class="flex_container">
+
+                        <div class="scholar_formation">
+
+                            <time><?= get_field('third_date') ?></time>
+
+                            <p><?= get_field('third_description') ?></p>
+
+                        </div>
+
+                    </li>
+
+                    <li class="flex_container">
+
+                        <div class="scholar_formation">
+
+                            <time><?= get_field('fourth_date') ?></time>
+
+                            <p><?= get_field('fourth_description') ?></p>
+
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            <?php endwhile; endif; ?>
+
+        </div>
+
+    </section>
+
+
+    <?php dw_component('contact_me') ?>
 
 </main>
 

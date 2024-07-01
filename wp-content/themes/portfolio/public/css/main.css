@@ -349,6 +349,66 @@ body main .soft_skills_container article .soft_skill_title, body main .soft_skil
   margin-bottom: 1.5em;
   font-size: 2.5em;
 }
+body main .scholar_career_container {
+  background-image: url("../../resources/images/timeline_arrow.svg");
+  height: 1052px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  justify-content: center;
+}
+body main .scholar_career_container ul {
+  width: 80%;
+  height: 80%;
+  flex-direction: column;
+  align-items: initial;
+}
+body main .scholar_career_container ul li {
+  flex-direction: column;
+  gap: 1em;
+  align-items: initial;
+  position: relative;
+}
+body main .scholar_career_container ul li:after {
+  background-color: #09214A;
+  width: 100px;
+  height: 100px;
+}
+body main .scholar_career_container ul li:nth-child(even) {
+  text-align: right;
+  align-items: flex-end;
+}
+body main .scholar_career_container ul li:nth-child(even) .scholar_formation:before {
+  width: 20%;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+  background-color: #09214A;
+}
+body main .scholar_career_container ul li:nth-child(odd) .scholar_formation:after {
+  width: 20%;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  content: "";
+  background-color: #09214A;
+}
+body main .scholar_career_container ul li .scholar_formation {
+  width: 25%;
+}
+body main .scholar_career_container ul li .scholar_formation time {
+  font-family: "Helvetica-Bold", "Arial-Bold", "Roboto-Bold", sans-serif;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+body main .scholar_career_container ul li .scholar_formation p {
+  font-size: 1.5625em;
+}
+body main .contact_me_container {
+  text-align: center;
+}
 body footer {
   background-color: #09214A;
   padding: 5em;

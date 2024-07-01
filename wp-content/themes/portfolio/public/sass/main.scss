@@ -445,6 +445,82 @@ body {
       }
     }
 
+    .scholar_career_container {
+      background-image: url("../../resources/images/timeline_arrow.svg");
+      height: 1052px;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      justify-content: center;
+
+      ul {
+        width: 80%;
+        height: 80%;
+        flex-direction: column;
+        align-items: initial;
+
+        li {
+          flex-direction: column;
+          gap: 1em;
+          align-items: initial;
+          position: relative;
+
+          &:after {
+            background-color: $dark_blue_color;
+            width: 100px;
+            height: 100px;
+          }
+
+          &:nth-child(even) {
+            text-align: right;
+            align-items: flex-end;
+
+            .scholar_formation {
+              &:before {
+                width: 20%;
+                height: 10px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                content: "";
+                background-color: $dark_blue_color;
+              }
+            }
+          }
+
+          &:nth-child(odd) {
+            .scholar_formation {
+              &:after {
+                width: 20%;
+                height: 10px;
+                position: absolute;
+                top: 50%;
+                left: 30%;
+                content: "";
+                background-color: $dark_blue_color;
+              }
+            }
+          }
+
+          .scholar_formation {
+            width: 25%;
+
+            time {
+              font-family: 'Helvetica-Bold', 'Arial-Bold', 'Roboto-Bold', sans-serif;
+              font-weight: bold;
+              font-size: 2.5em;
+            }
+
+            p {
+              font-size: 1.5625em;
+            }
+          }
+        }
+      }
+    }
+
+    .contact_me_container {
+      text-align: center;
+    }
   }
 
   footer {
