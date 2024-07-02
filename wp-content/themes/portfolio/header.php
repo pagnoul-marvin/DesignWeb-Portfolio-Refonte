@@ -20,7 +20,7 @@
 
     <h1 class="hidden"><?= get_the_title() ?></h1>
 
-    <div class="content">
+    <div class="content flex_container">
 
         <nav class="main_nav flex_container">
 

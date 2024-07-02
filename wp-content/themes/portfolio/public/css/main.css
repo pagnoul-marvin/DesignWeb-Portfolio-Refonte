@@ -1,4 +1,20 @@
 @charset "UTF-8";
+@media (width <= 1500px) {
+  footer article.flex_container:first-child {
+    flex-direction: column;
+    gap: 7.5em;
+    justify-content: initial;
+  }
+  footer article.flex_container:first-child aside.flex_container {
+    flex-basis: initial;
+  }
+}
+@media (width <= 775px) {
+  footer article.flex_container:last-child {
+    flex-direction: column;
+    gap: 1.875em;
+  }
+}
 .hidden {
   overflow: hidden !important;
   font-size: 0 !important;
@@ -110,11 +126,14 @@
 .content {
   z-index: 1;
   position: relative;
+  flex-direction: column;
+  align-items: initial;
+  gap: 6.25em;
+  height: 100%;
 }
 .content > div.flex_container {
-  margin-top: 6.25em;
   align-items: initial;
-  gap: 16.8125em;
+  flex-grow: 1;
 }
 .content > div.flex_container .title_and_catchphrase_container .main_title span {
   display: block;
@@ -131,11 +150,17 @@
   transform: scale(1.05);
 }
 .content > div.flex_container .list_links ul {
+  height: 100%;
   flex-direction: column;
-  gap: 1.5625em;
 }
 .content > div.flex_container .list_links ul li {
   transition: 0.3s ease-in-out;
+  display: inline-block;
+  width: 26.625em;
+  height: calc(33.33% - 1.5625em);
+}
+.content > div.flex_container .list_links ul li:not(:last-child) {
+  margin-bottom: 1.5625em;
 }
 .content > div.flex_container .list_links ul li a {
   background-size: cover;
@@ -158,8 +183,8 @@
   text-indent: -100000px;
   background-position: center;
   background-repeat: no-repeat;
-  width: 26.625em;
-  height: 15.25em;
+  width: 100%;
+  height: 100%;
 }
 
 .background {
@@ -185,6 +210,10 @@
   background-color: #254494;
   border-radius: 50%;
   border: none;
+  transition: 0.3s ease-in-out;
+}
+.slider_button:hover {
+  filter: brightness(70%);
 }
 .slider_button:first-of-type {
   background-image: url("../../resources/images/right_arrow.svg");
@@ -316,6 +345,8 @@ body main .last_projects_container {
 body main .last_projects_container .last_project {
   display: inline-block;
   transition: 0.3s ease-in-out;
+  width: calc(50% - 20px);
+  height: 41.625em;
 }
 body main .last_projects_container .last_project:nth-of-type(2) {
   transform: translateY(calc(50% + 1.875em));
@@ -327,12 +358,13 @@ body main .last_projects_container .last_project:hover {
   transform: scale(1.05);
 }
 body main .last_projects_container .last_project a {
-  width: 53.75em;
-  min-height: 41.625em;
+  width: 100%;
+  height: 100%;
   text-indent: -100000px;
   display: inline-block;
   background-repeat: no-repeat;
   background-position: top center;
+  background-size: cover;
   border-radius: 0.625em;
 }
 body main .last_projects_container .last_project:first-of-type a {
@@ -377,7 +409,9 @@ body main .home_cv .home_cv_container p {
   margin-bottom: 5em;
 }
 body main .home_cv .home_cv_container .cv_links_container {
-  padding: 0 30.6875em;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1.875em;
 }
 body main .skills_container {
   align-items: initial;
