@@ -478,6 +478,9 @@ body main .form_container form {
   align-items: initial;
   row-gap: 4.8em;
 }
+body main .form_container form input[type=submit] {
+  font-size: 1.6em;
+}
 body main .form_container form fieldset {
   flex-wrap: wrap;
   align-items: initial;

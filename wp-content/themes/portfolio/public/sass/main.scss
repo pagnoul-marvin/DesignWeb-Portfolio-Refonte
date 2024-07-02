@@ -632,6 +632,10 @@ body {
         align-items: initial;
         row-gap: 4.8em;
 
+        input[type="submit"] {
+          font-size: 1.6em;
+        }
+
         fieldset {
           flex-wrap: wrap;
           align-items: initial;

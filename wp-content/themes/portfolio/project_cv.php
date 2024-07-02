@@ -65,19 +65,19 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
     <?php
 
     $presentation = new WP_Query([
-        'post_type' => 'presentation',
+        'post_type' => 'cv-presentation',
         'post_status' => 'publish',
         'posts_per_page' => 1
     ]);
 
     $language = new WP_Query([
-        'post_type' => 'language',
+        'post_type' => 'cv-language',
         'post_status' => 'publish',
         'posts_per_page' => 1
     ]);
 
     $gallery = new WP_Query([
-        'post_type' => 'gallery',
+        'post_type' => 'cv-gallery',
         'post_status' => 'publish',
         'posts_per_page' => 1
     ]);
@@ -88,7 +88,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
     <section class="spacing section">
 
-        <h2>Présentation</h2>
+        <h2>Pr&eacute;sentation</h2>
 
         <?php if ($presentation->have_posts()) : while ($presentation->have_posts()) :$presentation->the_post(); ?>
 

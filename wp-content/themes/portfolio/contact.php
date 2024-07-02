@@ -82,7 +82,8 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                         <div class="label_input">
 
-                            <label class="label_positioning" for="firstname">Votre pr&eacute;nom&ast;&nbsp;: 255 caract&egrave;res maximum</label>
+                            <label class="label_positioning" for="firstname">Votre pr&eacute;nom&ast;&nbsp;: 255 caract&egrave;res
+                                maximum</label>
 
                             <input type="text" id="firstname" required placeholder="Ex : Jacques">
 
@@ -90,7 +91,8 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                         <div class="label_input">
 
-                            <label class="label_positioning" for="lastname">Votre nom&ast;&nbsp;: 255 caract&egrave;res maximum</label>
+                            <label class="label_positioning" for="lastname">Votre nom&ast;&nbsp;: 255 caract&egrave;res
+                                maximum</label>
 
                             <input type="text" id="lastname" required placeholder="Ex : Dupont">
 
@@ -98,7 +100,8 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                         <div class="label_input">
 
-                            <label class="label_positioning" for="mail">Votre adresse mail&ast;&nbsp;: Votre adresse mail doit &ecirc;tre
+                            <label class="label_positioning" for="mail">Votre adresse mail&ast;&nbsp;: Votre adresse
+                                mail doit &ecirc;tre
                                 valide</label>
 
                             <input type="email" id="mail" required placeholder="Ex : Jacques">
@@ -121,6 +124,12 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
                         </div>
 
                     </fieldset>
+
+                    <div>
+
+                        <input class="cta_links dark_links" type="submit" title="Soumettre le formulaire" value="Soumettre">
+
+                    </div>
 
                 </form>
 
