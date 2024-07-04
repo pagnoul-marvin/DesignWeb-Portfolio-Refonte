@@ -72,9 +72,9 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
             <div class="form_container">
 
-                <form action="" method="post" class="flex_container">
+                <form action="" method="post" class="flex_container text">
 
-                    <p>Les champs dot&eacute; d&rsquo;une &laquo;&ast;&raquo; sont requis.</p>
+                    <p>Les champs dot&eacute;s d&rsquo;une &laquo;&ast;&raquo; sont requis.</p>
 
                     <fieldset class="flex_container">
 

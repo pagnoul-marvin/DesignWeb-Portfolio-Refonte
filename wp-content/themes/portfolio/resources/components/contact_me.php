@@ -1,4 +1,4 @@
-<section class="spacing">
+<section class="spacing section">
 
     <div class="contact_me_container">
 

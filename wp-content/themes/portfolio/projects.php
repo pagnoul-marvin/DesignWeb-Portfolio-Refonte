@@ -101,7 +101,7 @@ $projects = new WP_Query([
 
                             <div class="text_and_links flex_container">
 
-                                <p><?= get_field('project_description') ?></p>
+                                <p class="text"><?= get_field('project_description') ?></p>
 
                                 <div class="links_container flex_container">
 
@@ -112,7 +112,8 @@ $projects = new WP_Query([
 
                                     <?php if (get_field('project_first_link')['url'] != home_url() . '/mes-projets/mon-portfolio/'): ?>
 
-                                        <a class="cta_links transparent_links_blue" href="<?= get_field('project_second_link')['url'] ?>"
+                                        <a class="cta_links transparent_links_blue"
+                                           href="<?= get_field('project_second_link')['url'] ?>"
                                            title="Se rediriger vers le site de <?= get_the_title() ?>">
                                             <?= get_field('project_second_link')['title'] ?>
                                         </a>

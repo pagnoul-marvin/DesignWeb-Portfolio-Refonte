@@ -26,10 +26,14 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
         </div>
 
-        <img src="<?= get_field('about_header_image')['url'] ?>"
-             alt="<?= get_field('about_header_image')['alt'] ?>"
-             width="<?= get_field('about_header_image')['width'] ?>"
-             height="<?= get_field('about_header_image')['height'] ?>">
+        <div>
+
+            <img src="<?= get_field('about_header_image')['url'] ?>"
+                 alt="<?= get_field('about_header_image')['alt'] ?>"
+                 width="<?= get_field('about_header_image')['width'] ?>"
+                 height="<?= get_field('about_header_image')['height'] ?>">
+
+        </div>
 
     </div>
 
@@ -99,7 +103,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
                          height="<?= get_field('skill_image')['height'] ?>">
 
 
-                    <p class="skill_description"><?= get_field('skill_description') ?></p>
+                    <p class="skill_description text"><?= get_field('skill_description') ?></p>
 
                 </article>
 
@@ -121,7 +125,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                     <h3 class="soft_skill_title"><?= get_field('soft_skill_title') ?></h3>
 
-                    <p class="soft_skill_description"><?= get_field('soft_skill_description') ?></p>
+                    <p class="soft_skill_description text"><?= get_field('soft_skill_description') ?></p>
 
                 </article>
 
@@ -143,7 +147,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                     <h3 class="hobby_title"><?= get_field('hobby_title') ?></h3>
 
-                    <p class="hobby_description"><?= get_field('hobby_description') ?></p>
+                    <p class="hobby_description text"><?= get_field('hobby_description') ?></p>
 
                 </article>
 
@@ -169,7 +173,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                             <time><?= get_field('first_date') ?></time>
 
-                            <p><?= get_field('first_description') ?></p>
+                            <p class="text"><?= get_field('first_description') ?></p>
 
                         </div>
 
@@ -181,7 +185,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                             <time datetime="2022"><?= get_field('second_date') ?></time>
 
-                            <p><?= get_field('second_description') ?></p>
+                            <p class="text"><?= get_field('second_description') ?></p>
 
                         </div>
 
@@ -193,7 +197,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                             <time><?= get_field('third_date') ?></time>
 
-                            <p><?= get_field('third_description') ?></p>
+                            <p class="text"><?= get_field('third_description') ?></p>
 
                         </div>
 
@@ -205,7 +209,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                             <time><?= get_field('fourth_date') ?></time>
 
-                            <p><?= get_field('fourth_description') ?></p>
+                            <p class="text"><?= get_field('fourth_description') ?></p>
 
                         </div>
 

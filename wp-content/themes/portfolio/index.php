@@ -40,12 +40,18 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
             <ul class="flex_container">
 
-                <li><a class="cards_link" href="<?= get_field('home_header_first_link')['url'] ?>"
-                       title="Aller vers la page À propos"><?= get_field('home_header_first_link')['title'] ?></a></li>
-                <li><a class="cards_link" href="<?= get_field('home_header_second_link')['url'] ?>"
+                <li>
+                    <a class="cards_link" href="<?= get_field('home_header_first_link')['url'] ?>"
+                       title="Aller vers la page À propos"><?= get_field('home_header_first_link')['title'] ?></a>
+                </li>
+
+                <li>
+                    <a class="cards_link" href="<?= get_field('home_header_second_link')['url'] ?>"
                        title="Aller vers la page Mes projets"><?= get_field('home_header_second_link')['title'] ?></a>
                 </li>
-                <li><a class="cards_link" href="<?= get_field('home_header_third_link')['url'] ?>"
+
+                <li>
+                    <a class="cards_link" href="<?= get_field('home_header_third_link')['url'] ?>"
                        title="Aller vers la page me contacter"><?= get_field('home_header_third_link')['title'] ?></a>
                 </li>
 

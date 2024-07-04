@@ -108,7 +108,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                         <div class="text_and_links flex_container">
 
-                            <p><?= get_field('presentation_description') ?></p>
+                            <p class="text"><?= get_field('presentation_description') ?></p>
 
                             <div class="links_container flex_container">
 
@@ -160,7 +160,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                         <div class="text_and_links flex_container">
 
-                            <p><?= get_field('language_description') ?></p>
+                            <p class="text"><?= get_field('language_description') ?></p>
 
                         </div>
 

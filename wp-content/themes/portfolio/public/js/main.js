@@ -3,7 +3,7 @@ import {settings} from "./settings.js";
 const portfolio = {
 
     pourcentage: 0,
-    maxPourcentage: -100,
+    maxPourcentage: -200,
     minPourcentage: 0,
 
     init() {
