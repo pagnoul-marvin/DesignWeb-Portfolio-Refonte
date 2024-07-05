@@ -43,7 +43,6 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 </div>
 
 <div class="background"></div>
-<?php dw_component('scroll_down') ?>
 
 </header>
 

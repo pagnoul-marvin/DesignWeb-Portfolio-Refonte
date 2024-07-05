@@ -33,6 +33,8 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                 <li>
 
+                    <span class="cards_link_image"></span>
+
                     <a href="<?= get_field('contact_header_first_link')['url'] ?>"
                        title="<?= get_field('contact_header_first_link')['title'] ?>"
                        class="cards_link"><?= get_field('contact_header_first_link')['title'] ?>
@@ -41,6 +43,8 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
                 </li>
 
                 <li>
+
+                    <span class="cards_link_image"></span>
 
                     <a href="<?= get_field('contact_header_second_link')['url'] ?>"
                        title="<?= get_field('contact_header_second_link')['title'] ?>"
@@ -60,7 +64,6 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
     </div>
 
     <div class="background"></div>
-<?php dw_component('scroll_down') ?>
 
     </header>
 

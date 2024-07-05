@@ -37,10 +37,22 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
             <ul class="flex_container">
 
-                <li><a class="cards_link" href="<?= get_field('cv_header_first_link')['url'] ?>"
-                       title="Aller vers la page À propos"><?= get_field('cv_header_first_link')['title'] ?></a></li>
-                <li><a class="cards_link" href="<?= get_field('cv_header_second_link')['url'] ?>"
+                <li>
+
+                    <span class="cards_link_image"></span>
+
+                    <a class="cards_link" href="<?= get_field('cv_header_first_link')['url'] ?>"
+                       title="Aller vers la page À propos"><?= get_field('cv_header_first_link')['title'] ?></a>
+
+                </li>
+
+                <li>
+
+                    <span class="cards_link_image"></span>
+
+                    <a class="cards_link" href="<?= get_field('cv_header_second_link')['url'] ?>"
                        title="Aller vers la page Mes projets"><?= get_field('cv_header_second_link')['title'] ?></a>
+
                 </li>
 
             </ul>
@@ -56,7 +68,6 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 </div>
 
 <div class="background"></div>
-<?php dw_component('scroll_down') ?>
 
 </header>
 
@@ -185,15 +196,18 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
                 <div class="slideshow">
 
                     <ul class="slideshow_content"><!--
-			--><li><img src="<?= get_field('gallery_first_image')['url'] ?>"
+			-->
+                        <li><img src="<?= get_field('gallery_first_image')['url'] ?>"
                                  alt="<?= get_field('gallery_first_image')['alt'] ?>"
                                  width="<?= get_field('gallery_first_image')['width'] ?>"
                                  height="<?= get_field('gallery_first_image')['height'] ?>"></li><!--
-			--><li><img src="<?= get_field('gallery_second_image')['url'] ?>"
+			-->
+                        <li><img src="<?= get_field('gallery_second_image')['url'] ?>"
                                  alt="<?= get_field('gallery_second_image')['alt'] ?>"
                                  width="<?= get_field('gallery_second_image')['width'] ?>"
                                  height="<?= get_field('gallery_second_image')['height'] ?>"></li><!--
-			--><li><img src="<?= get_field('gallery_third_image')['url'] ?>"
+			-->
+                        <li><img src="<?= get_field('gallery_third_image')['url'] ?>"
                                  alt="<?= get_field('gallery_third_image')['alt'] ?>"
                                  width="<?= get_field('gallery_third_image')['width'] ?>"
                                  height="<?= get_field('gallery_third_image')['height'] ?>"></li>

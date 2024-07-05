@@ -118,7 +118,9 @@
 }
 .content > div.flex_container {
   align-items: initial;
+  flex-direction: column;
   flex-grow: 1;
+  gap: 120px;
 }
 .content > div.flex_container .title_and_catchphrase_container .main_title span {
   display: block;
@@ -128,46 +130,70 @@
   margin-top: 1.5em;
   font-size: 2.5em;
 }
-.content > div.flex_container .title_and_catchphrase_container {
-  max-width: calc(50% - 152px - 7.5em);
-}
 .content > div.flex_container .list_links {
   transition: 0.3s ease-in-out;
   flex-grow: 1;
-  max-width: 26.625em;
 }
 .content > div.flex_container .list_links ul {
   gap: 1.5625em;
   height: 100%;
-  width: 100%;
-  flex-direction: column;
   align-items: initial;
+  transition: 0.3s ease-in-out;
+}
+.content > div.flex_container .list_links ul:hover li:not(:hover) {
+  transform: scale(0.9);
+  filter: brightness(5%);
+}
+.content > div.flex_container .list_links ul:hover li:hover {
+  transform: scale(1.1);
+}
+.content > div.flex_container .list_links ul:hover li:hover .cards_link {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
 }
 .content > div.flex_container .list_links ul li {
   height: 100%;
+  flex-grow: 1;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
-.content > div.flex_container .list_links ul li:first-child a {
+.content > div.flex_container .list_links ul li:first-child .cards_link_image {
   background-image: url("../../resources/images/decors_egypte_small.svg");
 }
-.content > div.flex_container .list_links ul li:nth-of-type(2) a {
+.content > div.flex_container .list_links ul li:nth-of-type(2) .cards_link_image {
   background-image: url("../../resources/images/decors_perse_small.svg");
 }
-.content > div.flex_container .list_links ul li:last-child a {
+.content > div.flex_container .list_links ul li:last-child .cards_link_image {
   background-image: url("../../resources/images/decors_grece_small.svg");
 }
 .content > div.flex_container .list_links ul li .cards_link {
   display: inline-block;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  font-family: "Helvetica-Bold", "Arial-Bold", "Roboto-Bold", sans-serif;
+  font-size: 2.5em;
+  align-content: center;
+  text-align: center;
+  color: transparent;
+  border-radius: 0.25em;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+}
+.content > div.flex_container .list_links ul li .cards_link_image {
   border-radius: 0.625em;
-  text-indent: -100000px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: 0.3s ease-in-out;
   width: 100%;
   height: 100%;
-}
-.content > div.flex_container .list_links ul li .cards_link:hover {
-  transform: scale(1.1);
+  display: inline-block;
 }
 
 .background {
@@ -207,30 +233,6 @@
   background-image: url("../../resources/images/left_arrow.svg");
 }
 
-.scroll_down {
-  z-index: 2;
-  position: absolute;
-  left: calc(50% - 151px);
-  bottom: 5em;
-  background-image: url("../../resources/images/fleche_bas.svg");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  padding-bottom: calc(1.875em + 51px);
-  animation: 1s ease-in-out infinite move_down;
-}
-.scroll_down_phrase {
-  font-size: 2.1875em;
-  color: rgb(255, 255, 255);
-}
-
-@keyframes move_down {
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
 body {
   font-family: "Helvetica-Roman", "Arial-Regular", "Roboto-Regular", sans-serif;
   background-color: #dcdcdc;
@@ -273,10 +275,10 @@ body header.home .background {
 body header.contact .background {
   background-image: url("../../resources/images/décors grèce.png");
 }
-body header.contact .content div.flex_container .list_links li:first-child a {
+body header.contact .content div.flex_container .list_links li:first-child .cards_link_image {
   background-image: url("../../resources/images/tel.png");
 }
-body header.contact .content div.flex_container .list_links li:last-child a {
+body header.contact .content div.flex_container .list_links li:last-child .cards_link_image {
   background-image: url("../../resources/images/mail.png");
 }
 body header.about .background {
@@ -290,22 +292,22 @@ body header.about .content div.flex_container img {
 body header.projects .background {
   background-image: url("../../resources/images/décors perse.png");
 }
-body header.projects .content div.flex_container .list_links li:first-child a {
+body header.projects .content div.flex_container .list_links li:first-child .cards_link_image {
   background-image: url("../../resources/images/cv_landing_page.png");
 }
-body header.projects .content div.flex_container .list_links li:nth-child(2) a {
+body header.projects .content div.flex_container .list_links li:nth-child(2) .cards_link_image {
   background-image: url("../../resources/images/portfolio.png");
 }
-body header.projects .content div.flex_container .list_links li:last-child a {
+body header.projects .content div.flex_container .list_links li:last-child .cards_link_image {
   background-image: url("../../resources/images/sef_final_logo.png");
 }
 body header.project_cv .background {
   background-image: url("../../resources/images/cv_landing_page.png");
 }
-body header.project_cv .content div.flex_container .list_links li:first-child a {
+body header.project_cv .content div.flex_container .list_links li:first-child .cards_link_image {
   background-image: url("../../resources/images/ttw_landing_page.png");
 }
-body header.project_cv .content div.flex_container .list_links li:last-child a {
+body header.project_cv .content div.flex_container .list_links li:last-child .cards_link_image {
   background-image: url("../../resources/images/cv_landing_page.png");
 }
 body header.project_portfolio .background {
@@ -314,10 +316,10 @@ body header.project_portfolio .background {
 body header.project_sef .background {
   background-image: url("../../resources/images/sef_final_logo.png");
 }
-body header.project_sef .content div.flex_container .list_links li:first-child a {
+body header.project_sef .content div.flex_container .list_links li:first-child .cards_link_image {
   background-image: url("../../resources/images/sef_huy.png");
 }
-body header.project_sef .content div.flex_container .list_links li:last-child a {
+body header.project_sef .content div.flex_container .list_links li:last-child .cards_link_image {
   background-image: url("../../resources/images/sef_final_logo.png");
 }
 body main {
@@ -332,12 +334,12 @@ body main .last_projects_container .last_project {
   display: inline-block;
   transition: 0.3s ease-in-out;
   width: calc(50% - 20px);
-  height: 41.625em;
+  height: 30em;
 }
-body main .last_projects_container .last_project:nth-of-type(2) {
+body main .last_projects_container .last_project:nth-of-type(even) {
   transform: translateY(calc(50% + 1.875em));
 }
-body main .last_projects_container .last_project:nth-of-type(2):hover {
+body main .last_projects_container .last_project:nth-of-type(even):hover {
   transform: scale(1.05) translateY(calc(50% + 1.875em));
 }
 body main .last_projects_container .last_project:hover {
@@ -681,20 +683,14 @@ body footer article.flex_container h3 {
   .light_links_footer {
     font-size: 1.5625em;
   }
-  .content > div.flex_container .title_and_catchphrase_container {
-    flex-basis: 70%;
-  }
   .content > div.flex_container .title_and_catchphrase_container .catchphrase {
+    font-size: 1.875em;
+  }
+  .content > div.flex_container .list_links ul li .cards_link {
     font-size: 1.875em;
   }
   .section {
     padding: 0 2.5em;
-  }
-  .scroll_down {
-    left: calc(50% - 124px);
-  }
-  .scroll_down_phrase {
-    font-size: 1.875em;
   }
   .go_back a.go_back_link {
     padding: 0 0 0 5em;
