@@ -100,7 +100,9 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                         <h3 class="hidden"><?= get_field('last_project_title') ?></h3>
 
-                        <a title="Aller vers la page <?= get_field('last_project_link')['title'] ?>"
+                        <span class="last_project_card"></span>
+
+                        <a class="last_project_link" title="Aller vers la page <?= get_field('last_project_link')['title'] ?>"
                            href="<?= get_field('last_project_link')['url'] ?>"><?= get_field('last_project_link')['title'] ?></a>
 
                     </article>

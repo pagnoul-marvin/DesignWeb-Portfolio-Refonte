@@ -149,7 +149,7 @@
 }
 .content > div.flex_container .list_links ul:hover li:hover .cards_link {
   color: rgb(255, 255, 255);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.3);
   top: 0;
 }
 .content > div.flex_container .list_links ul li {
@@ -326,26 +326,70 @@ body main {
   color: #09214A;
   margin: 12.5em 0;
 }
+body main.flex_container {
+  flex-direction: column;
+  align-items: initial;
+}
+body main.flex_container section:nth-of-type(even) {
+  padding-left: 0;
+  align-self: flex-end;
+}
+body main.flex_container section:nth-of-type(odd) {
+  padding-right: 0;
+}
+body main.flex_container section {
+  max-width: 50%;
+}
 body main .last_projects_container {
   flex-wrap: wrap;
   row-gap: 3.75em;
+}
+body main .last_projects_container:hover .last_project:hover {
+  transform: scale(1.05);
+}
+body main .last_projects_container:hover .last_project:hover .last_project_link {
+  top: 0;
+  color: rgb(255, 255, 255);
+}
+body main .last_projects_container:hover .last_project:not(:hover) {
+  transform: scale(0.95);
+  filter: brightness(5%);
+}
+body main .last_projects_container:hover .last_project:not(:hover):nth-of-type(even) {
+  transform: translateY(calc(50% + 1.875em)) scale(0.95);
+}
+body main .last_projects_container:hover .last_project:nth-of-type(even):hover {
+  transform: translateY(calc(50% + 1.875em)) scale(1.05);
 }
 body main .last_projects_container .last_project {
   display: inline-block;
   transition: 0.3s ease-in-out;
   width: calc(50% - 20px);
   height: 30em;
+  overflow: hidden;
 }
 body main .last_projects_container .last_project:nth-of-type(even) {
   transform: translateY(calc(50% + 1.875em));
 }
-body main .last_projects_container .last_project:nth-of-type(even):hover {
-  transform: scale(1.05) translateY(calc(50% + 1.875em));
+body main .last_projects_container .last_project_link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  transition: 0.3s ease-in-out;
+  align-content: center;
+  text-align: center;
+  color: transparent;
+  text-decoration: none;
+  z-index: 1;
+  font-size: 2.5em;
+  font-family: "Helvetica-Bold", "Arial-Bold", "Roboto-Bold", sans-serif;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.25em;
 }
-body main .last_projects_container .last_project:hover {
-  transform: scale(1.1);
-}
-body main .last_projects_container .last_project a {
+body main .last_projects_container .last_project_card {
   width: 100%;
   height: 100%;
   text-indent: -100000px;
@@ -355,13 +399,13 @@ body main .last_projects_container .last_project a {
   background-size: cover;
   border-radius: 0.625em;
 }
-body main .last_projects_container .last_project:first-of-type a {
+body main .last_projects_container .last_project:first-of-type .last_project_card {
   background-image: url("../../resources/images/piédestal avec cv.png");
 }
-body main .last_projects_container .last_project:nth-of-type(2) a {
+body main .last_projects_container .last_project:nth-of-type(2) .last_project_card {
   background-image: url("../../resources/images/piédestal avec portfolio.png");
 }
-body main .last_projects_container .last_project:last-of-type a {
+body main .last_projects_container .last_project:last-of-type .last_project_card {
   background-image: url("../../resources/images/piédestal avec sef.png");
 }
 body main .home_cv {
@@ -590,6 +634,12 @@ body main .slider_container .slideshow_content li img {
   width: 100%;
   height: 100%;
   border-radius: 0.625em;
+}
+body main .ln_title {
+  margin-bottom: 0.6em;
+}
+body main .owner:not(:last-of-type) {
+  margin-bottom: 0.8333em;
 }
 body main .contact_me_container {
   text-align: center;

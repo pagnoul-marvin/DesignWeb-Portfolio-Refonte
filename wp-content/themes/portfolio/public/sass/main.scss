@@ -174,7 +174,7 @@
 
             & .cards_link {
               color: $white_color;
-              background-color: rgba(0, 0, 0, 0.4);
+              background-color: rgba(0, 0, 0, 0.3);
               top: 0;
             }
           }
@@ -438,29 +438,83 @@ body {
     color: $dark_blue_color;
     margin: $section_margin 0;
 
+    &.flex_container {
+      flex-direction: column;
+      align-items: initial;
+
+      section:nth-of-type(even) {
+        padding-left: 0;
+        align-self: flex-end;
+      }
+
+      section:nth-of-type(odd) {
+        padding-right: 0;
+      }
+
+      section {
+        max-width: 50%;
+      }
+    }
+
     .last_projects_container {
       flex-wrap: wrap;
       row-gap: 3.75em;
+
+      &:hover {
+        & .last_project:hover {
+          transform: scale(1.05);
+
+          & .last_project_link {
+            top: 0;
+            color: $white_color;
+          }
+        }
+
+        & .last_project:not(:hover) {
+          transform: scale(.95);
+          filter: brightness(5%);
+
+          &:nth-of-type(even) {
+            transform: translateY(calc(50% + 1.875em)) scale(.95);
+          }
+        }
+
+        & .last_project:nth-of-type(even):hover {
+          transform: translateY(calc(50% + 1.875em)) scale(1.05);
+        }
+      }
 
       .last_project {
         display: inline-block;
         transition: .3s ease-in-out;
         width: calc(50% - 20px);
         height: 30em;
+        overflow: hidden;
 
         &:nth-of-type(even) {
           transform: translateY(calc(50% + 1.875em));
-
-          &:hover {
-            transform: scale(1.05) translateY(calc(50% + 1.875em));
-          }
         }
 
-        &:hover {
-          transform: scale(1.1);
+        &_link {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: -100%;
+          left: 0;
+          transition: .3s ease-in-out;
+          align-content: center;
+          text-align: center;
+          color: transparent;
+          text-decoration: none;
+          z-index: 1;
+          font-size: 2.5em;
+          font-family: 'Helvetica-Bold', 'Arial-Bold', 'Roboto-Bold', sans-serif;
+          font-weight: bold;
+          background-color: rgba(0, 0, 0, .4);
+          border-radius: .25em;
         }
 
-        a {
+        &_card {
           width: 100%;
           height: 100%;
           text-indent: -100000px;
@@ -471,15 +525,15 @@ body {
           border-radius: 0.625em;
         }
 
-        &:first-of-type a {
+        &:first-of-type .last_project_card {
           background-image: url("../../resources/images/piédestal avec cv.png");
         }
 
-        &:nth-of-type(2) a {
+        &:nth-of-type(2) .last_project_card {
           background-image: url("../../resources/images/piédestal avec portfolio.png");
         }
 
-        &:last-of-type a {
+        &:last-of-type .last_project_card {
           background-image: url("../../resources/images/piédestal avec sef.png");
         }
       }
@@ -769,6 +823,16 @@ body {
             }
           }
         }
+      }
+    }
+
+    .ln_title {
+      margin-bottom: .6em;
+    }
+
+    .owner {
+      &:not(:last-of-type) {
+        margin-bottom: .8333em;
       }
     }
 
