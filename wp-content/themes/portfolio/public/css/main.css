@@ -69,7 +69,7 @@
   font-family: "Helvetica-Roman", "Arial-Regular", "Roboto-Regular", sans-serif;
   color: rgb(255, 255, 255);
   text-decoration: 1px underline transparent;
-  transition: 0.3s ease-in-out;
+  transition: text-decoration 0.3s ease-in-out;
 }
 .main_footer_link:hover {
   text-decoration: 1px underline rgb(255, 255, 255);
@@ -107,6 +107,12 @@
   text-indent: -10000px;
   overflow: hidden;
   background-repeat: no-repeat;
+}
+.main_nav label[for=burger_menu], .main_nav input[id=burger_menu] {
+  display: none;
+}
+.main_nav_list {
+  transition: top 0.3s ease-in-out;
 }
 .main_nav_list_item:not(:last-child) {
   margin-right: 2.8em;
@@ -241,6 +247,7 @@ body {
   font-family: "Helvetica-Roman", "Arial-Regular", "Roboto-Regular", sans-serif;
   background-color: #dcdcdc;
   overflow-x: hidden;
+  hyphens: auto;
 }
 body h1, body h2, body h3 {
   font-family: "HelveticBold", "Arial-Bold", "Roboto-Bold", sans-serif;
@@ -396,7 +403,7 @@ body main.flex_container section:nth-of-type(odd) {
   padding-right: 0;
 }
 body main.flex_container section {
-  max-width: 50%;
+  max-width: 60%;
 }
 body main .last_projects_container {
   flex-wrap: wrap;
@@ -603,7 +610,7 @@ body main .form_container form input[type=submit] {
 body main .form_container form fieldset {
   flex-wrap: wrap;
   align-items: initial;
-  gap: 3em;
+  row-gap: 3em;
 }
 body main .form_container form fieldset legend {
   font-family: "Helvetica-Bold", "Arial-Bold", "Roboto-Bold", sans-serif;
@@ -612,8 +619,8 @@ body main .form_container form fieldset legend {
   margin-bottom: 1.5em;
 }
 body main .form_container form fieldset .label_input {
-  width: calc(50% - 80px);
   position: relative;
+  flex-basis: calc(50% - 1.5em);
 }
 body main .form_container form fieldset .label_input input, body main .form_container form fieldset .label_input textarea {
   min-height: 8.9375em;
@@ -760,27 +767,6 @@ body footer article.flex_container h3 {
   color: rgb(255, 255, 255);
 }
 
-@media (width <= 1500px) {
-  footer article.flex_container:first-child {
-    flex-direction: column;
-    gap: 7.5em;
-    justify-content: initial;
-  }
-  footer article.flex_container:first-child aside.flex_container {
-    width: 75%;
-    flex-basis: initial;
-  }
-  footer article.flex_container:first-child aside.flex_container ul {
-    gap: 1.875em;
-    flex-wrap: wrap;
-  }
-}
-@media (width <= 775px) {
-  footer article.flex_container:last-child {
-    flex-direction: column;
-    gap: 1.875em;
-  }
-}
 @media (height < 1080px) {
   .text {
     font-size: 1em;
@@ -814,6 +800,9 @@ body footer article.flex_container h3 {
     height: calc(100vh - 5em);
     width: calc(100vw - 5em);
   }
+  body main .last_projects_container .last_project_link {
+    font-size: 1.875em;
+  }
   body main .last_time_modified {
     margin-left: 2.5em;
   }
@@ -829,6 +818,262 @@ body footer article.flex_container h3 {
   }
   body main .home_cv .home_cv_container p {
     font-size: 1.875em;
+  }
+  body footer {
+    padding: 2.5em;
+  }
+}
+@media (width <= 1500px) {
+  footer article.flex_container:first-child {
+    flex-direction: column;
+    gap: 7.5em;
+    justify-content: initial;
+  }
+  footer article.flex_container:first-child aside.flex_container {
+    width: 75%;
+    flex-basis: initial;
+  }
+  footer article.flex_container:first-child aside.flex_container ul {
+    gap: 1.875em;
+    flex-wrap: wrap;
+  }
+}
+@media (width <= 1027px) and (width >= 775px) and (width <= 530px) {
+  body main .form_container form fieldset .label_input input, body main .form_container form fieldset .label_input textarea {
+    padding-top: 1em;
+  }
+}
+@media (width <= 775px) {
+  body main .projects_container article:nth-child(even) .project_content, body main .projects_container article:nth-child(even) .presentation_content, body main .projects_container article:nth-child(even) .language_content, body main .presentation_container article:nth-child(even) .project_content, body main .presentation_container article:nth-child(even) .presentation_content, body main .presentation_container article:nth-child(even) .language_content, body main .language_container article:nth-child(even) .project_content, body main .language_container article:nth-child(even) .presentation_content, body main .language_container article:nth-child(even) .language_content {
+    flex-direction: column;
+  }
+  body main .projects_container article .project_content, body main .projects_container article .presentation_content, body main .projects_container article .language_content, body main .presentation_container article .project_content, body main .presentation_container article .presentation_content, body main .presentation_container article .language_content, body main .language_container article .project_content, body main .language_container article .presentation_content, body main .language_container article .language_content {
+    flex-direction: column;
+    gap: 1.875em;
+  }
+  body main .projects_container article .project_content img, body main .projects_container article .presentation_content img, body main .projects_container article .language_content img, body main .presentation_container article .project_content img, body main .presentation_container article .presentation_content img, body main .presentation_container article .language_content img, body main .language_container article .project_content img, body main .language_container article .presentation_content img, body main .language_container article .language_content img {
+    width: 100%;
+  }
+  body main .projects_container article .project_content .text_and_links, body main .projects_container article .presentation_content .text_and_links, body main .projects_container article .language_content .text_and_links, body main .presentation_container article .project_content .text_and_links, body main .presentation_container article .presentation_content .text_and_links, body main .presentation_container article .language_content .text_and_links, body main .language_container article .project_content .text_and_links, body main .language_container article .presentation_content .text_and_links, body main .language_container article .language_content .text_and_links {
+    gap: 1.875em;
+  }
+  body main .form_container fieldset {
+    flex-direction: column;
+  }
+  body footer article.flex_container:last-child {
+    flex-direction: column;
+    gap: 1.875em;
+  }
+}
+@media (width <= 700px) {
+  body main .last_projects_container .last_project {
+    height: 15em;
+  }
+  body main .soft_skills_container, body main .hobbies_container {
+    flex-direction: column;
+    align-items: initial;
+  }
+  body main .soft_skills_container article, body main .hobbies_container article {
+    border-top: none;
+    padding-left: 0;
+    padding-top: 0;
+  }
+  body main .soft_skills_container article:not(:last-child), body main .hobbies_container article:not(:last-child) {
+    border-right: none;
+  }
+  body main .soft_skills_container article:not(:first-child), body main .hobbies_container article:not(:first-child) {
+    border-top: 1px solid #09214A;
+    padding-top: 2.5em;
+  }
+  body main .soft_skills_container article:last-child, body main .hobbies_container article:last-child {
+    padding-bottom: 0;
+  }
+  body main .soft_skills_container article .soft_skill_title, body main .soft_skills_container article .hobby_title, body main .hobbies_container article .soft_skill_title, body main .hobbies_container article .hobby_title {
+    font-size: 1.25em;
+  }
+}
+@media (width <= 550px) {
+  body header .main_nav {
+    position: relative;
+  }
+  body header .main_nav_list {
+    position: absolute;
+    top: -10000px;
+    z-index: 2;
+  }
+  body header .main_nav_home_link {
+    width: 50px;
+    height: 36.82px;
+  }
+  body header .main_nav label[for=burger_menu], body header .main_nav input[id=burger_menu] {
+    display: initial;
+  }
+  body header .main_nav input[type=checkbox] {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    visibility: hidden;
+    position: absolute;
+  }
+  body header .main_nav input[type=checkbox]:checked ~ .main_nav_list {
+    top: -2.5em;
+    left: -2.5em;
+    padding: 5em;
+    background-color: #09214A;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: calc(100vw - 10em);
+    height: calc(100vh - 10em);
+  }
+  body header .main_nav input[type=checkbox]:checked ~ .main_nav_list li {
+    margin: 0;
+  }
+  body header .main_nav input[type=checkbox]:checked ~ .main_nav_list li a {
+    font-size: 2.5em;
+  }
+  body header .main_nav input[type=checkbox]:checked ~ label[for=burger_menu] {
+    z-index: 3;
+  }
+  body header .main_nav input[type=checkbox]:checked ~ label .line {
+    background-color: transparent;
+  }
+  body header .main_nav input[type=checkbox]:checked ~ label .line:before, body header .main_nav input[type=checkbox]:checked ~ label .line:after {
+    background-color: #fff;
+  }
+  body header .main_nav input[type=checkbox]:checked ~ label .line:before {
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  body header .main_nav input[type=checkbox]:checked ~ label .line:after {
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  body header .main_nav label[for=burger_menu] {
+    width: 2em;
+    height: 3em;
+    position: relative;
+    cursor: pointer;
+  }
+  body header .main_nav label[for=burger_menu] .line {
+    width: 100%;
+    display: block;
+    height: 0.2em;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: #fff;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -o-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+  }
+  body header .main_nav label[for=burger_menu] .line:before, body header .main_nav label[for=burger_menu] .line:after {
+    content: "";
+    height: 0.2em;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+  }
+  body header .main_nav label[for=burger_menu] .line:before {
+    -ms-transform: translateY(-0.5em);
+    transform: translateY(-0.5em);
+  }
+  body header .main_nav label[for=burger_menu] .line:after {
+    -ms-transform: translateY(0.5em);
+    transform: translateY(0.5em);
+  }
+  body main.flex_container section {
+    max-width: unset;
+  }
+  body main.flex_container section:nth-of-type(odd) {
+    padding-right: 2.5em;
+  }
+  body main.flex_container section:nth-of-type(even) {
+    align-self: flex-start;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+  }
+}
+@media (width <= 420px) {
+  body h1, body h2 {
+    font-size: 2.5em;
+  }
+  body h3 {
+    font-size: 1.25em;
+  }
+  body header {
+    padding: 1em;
+    height: calc(100vh - 2em);
+    width: calc(100vw - 2em);
+  }
+  body header .main_nav input[id=burger_menu]:checked ~ .main_nav_list {
+    top: -1em;
+    left: -1em;
+    padding: 1em;
+    width: calc(100vw - 2em);
+    height: calc(100vh - 2em);
+  }
+  body header .main_nav input[id=burger_menu]:checked ~ .main_nav_list li a {
+    font-size: 1.875em;
+  }
+  body main.flex_container section:nth-of-type(odd) {
+    padding-right: 1em;
+  }
+  body main.flex_container section:nth-of-type(even) {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  body main .last_projects_container .last_project {
+    height: 7.5em;
+  }
+  body main .last_projects_container .last_project_link {
+    font-size: 1.25em;
+  }
+  body main .last_time_modified {
+    margin-left: 1em;
+  }
+  body main .banner div {
+    margin: 1em;
+  }
+  body main .banner label {
+    margin: 1em 1em 0 0;
+  }
+  body main .home_cv {
+    padding: 10.625em 1em;
+    width: calc(100vw - 2em);
+  }
+  body main .home_cv .home_cv_container p {
+    font-size: 1.25em;
+  }
+  body footer {
+    padding: 2.5em 1em;
+  }
+  .text {
+    font-size: 0.75em;
+  }
+  .cta_links {
+    font-size: 1.25em;
+  }
+  .light_links_footer {
+    font-size: 1em;
+  }
+  .section {
+    padding: 0 1em;
+  }
+  .go_back a.go_back_link {
+    padding: 0 0 0 2em;
+  }
+  .content > div.flex_container .title_and_catchphrase_container .catchphrase {
+    font-size: 1.25em;
+  }
+  .content > div.flex_container .list_links ul li .cards_link {
+    font-size: 1.25em;
   }
 }
 

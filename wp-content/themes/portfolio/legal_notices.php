@@ -6,6 +6,14 @@ Template Name: Legal notices
 
 get_header();
 
+$recently_modified_notice = new WP_Query([
+    'post_type' => 'legal-notice',
+    'post_status' => 'publish',
+    'orderby' => 'modified',
+    'order' => 'DESC',
+    'posts_per_page' => 1
+]);
+
 $legal_notices = new WP_Query([
     'post_type' => 'legal-notice',
     'post_status' => 'publish',
@@ -83,13 +91,18 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
         <?php dw_component('no_js_banner') ?>
 
-        <?php if ($legal_notices->have_posts()) : while ($legal_notices->have_posts()) :$legal_notices->the_post(); ?>
 
+        <?php if ($recently_modified_notice->have_posts()) : ?>
+            <?php $recently_modified_notice->the_post(); ?>
             <div class="last_time_modified">
 
                 <p class="text">Derni&egrave;re modification des mentions l&eacute;gales&nbsp;: <?= get_the_modified_time('d F Y') ?></p>
 
             </div>
+
+        <?php endif; ?>
+
+        <?php if ($legal_notices->have_posts()) : while ($legal_notices->have_posts()) :$legal_notices->the_post(); ?>
 
             <section class="section spacing">
 

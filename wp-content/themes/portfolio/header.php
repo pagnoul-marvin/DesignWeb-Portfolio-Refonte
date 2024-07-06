@@ -28,6 +28,11 @@
 
             <a class="main_nav_home_link" href="<?= home_url() ?>" title="Aller vers l'accueil">Aller vers l&rsquo;accueil</a>
 
+            <input type="checkbox" id="burger_menu">
+            <label for="burger_menu">
+                <span class="line"></span>
+            </label>
+
             <ul class="flex_container main_nav_list">
 
                 <?php foreach (dw_get_navigation_links('main') as $link): ?>

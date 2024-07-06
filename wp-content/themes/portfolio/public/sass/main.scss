@@ -76,7 +76,7 @@
   font-family: 'Helvetica-Roman', 'Arial-Regular', 'Roboto-Regular', sans-serif;
   color: $white_color;
   text-decoration: 1px underline transparent;
-  transition: 0.3s ease-in-out;
+  transition: text-decoration 0.3s ease-in-out;
 
   &:hover {
     text-decoration: 1px underline $white_color;
@@ -120,7 +120,13 @@
     background-repeat: no-repeat;
   }
 
+  label[for="burger_menu"], input[id="burger_menu"] {
+    display: none;
+  }
+
   &_list {
+    transition: top .3s ease-in-out;
+
     &_item {
       &:not(:last-child) {
         margin-right: 2.8em;
@@ -281,6 +287,7 @@ body {
   font-family: 'Helvetica-Roman', 'Arial-Regular', 'Roboto-Regular', sans-serif;
   background-color: $light_grey_color;
   overflow-x: hidden;
+  hyphens: auto;
 
   h1, h2, h3 {
     font-family: 'HelveticBold', 'Arial-Bold', 'Roboto-Bold', sans-serif;
@@ -522,7 +529,7 @@ body {
       }
 
       section {
-        max-width: 50%;
+        max-width: 60%;
       }
     }
 
@@ -781,7 +788,7 @@ body {
         fieldset {
           flex-wrap: wrap;
           align-items: initial;
-          gap: 3em;
+          row-gap: 3em;
 
           legend {
             font-family: 'Helvetica-Bold', 'Arial-Bold', 'Roboto-Bold', sans-serif;
@@ -791,8 +798,8 @@ body {
           }
 
           .label_input {
-            width: calc(50% - 80px);
             position: relative;
+            flex-basis: calc(50% - 1.5em);
 
             input, textarea {
               min-height: 8.9375em;
@@ -994,36 +1001,6 @@ body {
   }
 }
 
-
-@media (width<=1500px) {
-  footer {
-    article.flex_container:first-child {
-      flex-direction: column;
-      gap: 7.5em;
-      justify-content: initial;
-
-      aside.flex_container {
-        width: 75%;
-        flex-basis: initial;
-
-        ul {
-          gap: 1.875em;
-          flex-wrap: wrap;
-        }
-      }
-    }
-  }
-}
-
-@media (width<=775px) {
-  footer {
-    article.flex_container:last-child {
-      flex-direction: column;
-      gap: 1.875em;
-    }
-  }
-}
-
 @media (height <1080px) {
   .text {
     font-size: 1em;
@@ -1085,6 +1062,15 @@ body {
     }
 
     main {
+
+      .last_projects_container {
+        .last_project {
+          &_link {
+            font-size: 1.875em;
+          }
+        }
+      }
+
       .last_time_modified {
         margin-left: 2.5em;
       }
@@ -1106,6 +1092,403 @@ body {
         .home_cv_container {
           p {
             font-size: 1.875em;
+          }
+        }
+      }
+    }
+
+    footer {
+      padding: 2.5em;
+    }
+  }
+}
+
+@media (width<=1500px) {
+  footer {
+    article.flex_container:first-child {
+      flex-direction: column;
+      gap: 7.5em;
+      justify-content: initial;
+
+      aside.flex_container {
+        width: 75%;
+        flex-basis: initial;
+
+        ul {
+          gap: 1.875em;
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+}
+
+@media (width <= 1027px) and (width >= 775px) and (width <= 530px) {
+  body {
+    main {
+      .form_container {
+        form {
+          fieldset {
+            .label_input {
+              input, textarea {
+                padding-top: 1em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (width<=775px) {
+  body {
+    main {
+      .projects_container, .presentation_container, .language_container {
+        article {
+          &:nth-child(even) .project_content, &:nth-child(even) .presentation_content, &:nth-child(even) .language_content {
+            flex-direction: column;
+          }
+
+          .project_content, .presentation_content, .language_content {
+            flex-direction: column;
+            gap: 1.875em;
+
+            img {
+              width: 100%;
+            }
+
+            .text_and_links {
+              gap: 1.875em;
+            }
+          }
+        }
+      }
+
+      .form_container {
+        fieldset {
+          flex-direction: column;
+        }
+      }
+    }
+
+    footer {
+      article.flex_container:last-child {
+        flex-direction: column;
+        gap: 1.875em;
+      }
+    }
+  }
+}
+
+@media (width <= 700px) {
+  body {
+    main {
+      .last_projects_container {
+        .last_project {
+          height: 15em;
+        }
+      }
+
+      .soft_skills_container, .hobbies_container {
+        flex-direction: column;
+        align-items: initial;
+
+        article {
+          border-top: none;
+          padding-left: 0;
+          padding-top: 0;
+
+          &:not(:last-child) {
+            border-right: none;
+          }
+
+          &:not(:first-child) {
+            border-top: 1px solid $dark_blue_color;
+            padding-top: 2.5em;
+          }
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+
+          .soft_skill_title, .hobby_title {
+            font-size: 1.25em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (width <= 550px) {
+  body {
+    header {
+
+      .main_nav {
+        position: relative;
+
+        &_list {
+          position: absolute;
+          top: -10000px;
+          z-index: 2;
+        }
+
+        &_home_link {
+          width: 50px;
+          height: 36.82px;
+        }
+
+        label[for="burger_menu"], input[id="burger_menu"] {
+          display: initial;
+        }
+
+        input[type="checkbox"] {
+          clip: rect(0 0 0 0);
+          clip-path: inset(50%);
+          height: 1px;
+          width: 1px;
+          visibility: hidden;
+          position: absolute;
+
+          &:checked {
+            & ~ .main_nav_list {
+              top: -2.5em;
+              left: -2.5em;
+              padding: 5em;
+              background-color: $dark_blue_color;
+              flex-direction: column;
+              justify-content: space-evenly;
+              align-items: center;
+              width: calc(100vw - 10em);
+              height: calc(100vh - 10em);
+
+              & li {
+                margin: 0;
+
+                a {
+                  font-size: 2.5em;
+                }
+              }
+            }
+
+            & ~ label[for="burger_menu"] {
+              z-index: 3;
+            }
+
+            & ~ label .line {
+              background-color: transparent;
+            }
+
+            & ~ label .line:before, & ~ label .line:after {
+              background-color: #fff;
+            }
+
+            & ~ label .line:before {
+              -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+            }
+
+            & ~ label .line:after {
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+        }
+
+        label[for='burger_menu'] {
+          width: 2em;
+          height: 3em;
+          position: relative;
+          cursor: pointer;
+
+          .line {
+            width: 100%;
+            display: block;
+            height: 0.2em;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            background-color: #fff;
+            -webkit-transition: background-color 0.3s ease-in-out;
+            -o-transition: background-color 0.3s ease-in-out;
+            transition: background-color 0.3s ease-in-out;
+
+            &:before, &:after {
+              content: '';
+              height: 0.2em;
+              width: 100%;
+              background-color: #fff;
+              position: absolute;
+              -webkit-transition: -webkit-transform 0.3s ease-in-out;
+              transition: -webkit-transform 0.3s ease-in-out;
+              -o-transition: transform 0.3s ease-in-out;
+              transition: transform 0.3s ease-in-out;
+            }
+
+            &:before {
+              -ms-transform: translateY(-0.5em);
+              transform: translateY(-0.5em);
+            }
+
+            &:after {
+              -ms-transform: translateY(0.5em);
+              transform: translateY(0.5em);
+            }
+          }
+        }
+      }
+    }
+
+    main {
+      &.flex_container {
+        section {
+          max-width: unset;
+
+          &:nth-of-type(odd) {
+            padding-right: 2.5em;
+          }
+
+          &:nth-of-type(even) {
+            align-self: flex-start;
+            padding-left: 2.5em;
+            padding-right: 2.5em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (width <= 420px) {
+  body {
+    h1, h2 {
+      font-size: 2.5em;
+    }
+
+    h3 {
+      font-size: 1.25em;
+    }
+
+    header {
+      padding: 1em;
+      height: calc(100vh - 2em);
+      width: calc(100vw - 2em);
+
+      .main_nav {
+
+        input[id="burger_menu"]:checked {
+          & ~ .main_nav_list {
+            top: -1em;
+            left: -1em;
+            padding: 1em;
+            width: calc(100vw - 2em);
+            height: calc(100vh - 2em);
+
+            li {
+              a {
+                font-size: 1.875em;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    main {
+      &.flex_container {
+        section {
+          &:nth-of-type(odd) {
+            padding-right: 1em;
+          }
+
+          &:nth-of-type(even) {
+            padding-left: 1em;
+            padding-right: 1em;
+          }
+        }
+      }
+
+      .last_projects_container {
+        .last_project {
+          height: 7.5em;
+
+          &_link {
+            font-size: 1.25em;
+          }
+        }
+      }
+
+      .last_time_modified {
+        margin-left: 1em;
+      }
+
+      .banner {
+        div {
+          margin: 1em;
+        }
+
+        label {
+          margin: 1em 1em 0 0;
+        }
+      }
+
+      .home_cv {
+        padding: 10.625em 1em;
+        width: calc(100vw - 2em);
+
+        .home_cv_container {
+          p {
+            font-size: 1.25em;
+          }
+        }
+      }
+    }
+
+    footer {
+      padding: 2.5em 1em;
+    }
+  }
+
+  .text {
+    font-size: .75em;
+  }
+
+  .cta_links {
+    font-size: 1.25em;
+  }
+
+  .light_links {
+    &_footer {
+      font-size: 1em;
+    }
+  }
+
+  .section {
+    padding: 0 1em;
+  }
+
+  .go_back {
+    a.go_back_link {
+      padding: 0 0 0 2em;
+    }
+  }
+
+  .content {
+    & > div.flex_container {
+      .title_and_catchphrase_container {
+        .catchphrase {
+          font-size: 1.25em;
+        }
+      }
+
+      .list_links {
+        ul {
+          li {
+            .cards_link {
+              font-size: 1.25em;
+            }
           }
         }
       }
