@@ -5,6 +5,7 @@ export const settings = {
     progressBarElement: document.getElementById('progress_bar'),
     buttonElements: document.querySelectorAll('.slider_button'),
     slideshowElement: document.querySelector('.slideshow_content'),
+    noJsBannerElement: document.querySelector('.no_js_banner'),
 
 
     //NUMBERS
@@ -17,4 +18,9 @@ export const settings = {
 
     beforeID: 'before',
     afterID: 'after',
+
+
+    //CLASSES
+
+    noDisplayClass: 'no_display',
 }

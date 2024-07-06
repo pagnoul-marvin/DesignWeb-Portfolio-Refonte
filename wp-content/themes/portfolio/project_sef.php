@@ -73,6 +73,8 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
 <main>
 
+    <?php dw_component('no_js_banner') ?>
+
     <?php dw_component('go_back_nav') ?>
 
     <?php dw_component('contact_me'); ?>

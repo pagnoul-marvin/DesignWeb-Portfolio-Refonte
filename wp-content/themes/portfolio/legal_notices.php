@@ -81,7 +81,15 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
     <main class="flex_container">
 
+        <?php dw_component('no_js_banner') ?>
+
         <?php if ($legal_notices->have_posts()) : while ($legal_notices->have_posts()) :$legal_notices->the_post(); ?>
+
+            <div class="last_time_modified">
+
+                <p class="text">Derni&egrave;re modification des mentions l&eacute;gales&nbsp;: <?= get_the_modified_time('d F Y') ?></p>
+
+            </div>
 
             <section class="section spacing">
 

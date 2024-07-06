@@ -48,6 +48,8 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
 <main>
 
+    <?php dw_component('no_js_banner') ?>
+
     <?php
 
     $presentation = new WP_Query([

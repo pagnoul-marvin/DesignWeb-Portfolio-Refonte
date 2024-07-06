@@ -6,6 +6,10 @@
   position: absolute;
 }
 
+.no_display {
+  display: none;
+}
+
 .text {
   font-size: 1.5625em;
   line-height: 1.28em;
@@ -325,6 +329,60 @@ body header.project_sef .content div.flex_container .list_links li:last-child .c
 body main {
   color: #09214A;
   margin: 12.5em 0;
+}
+body main .no_js_banner {
+  background-color: #09214A;
+}
+body main .no_js_banner_text {
+  color: rgb(255, 255, 255);
+  margin-bottom: 1.2em;
+}
+body main .no_js_banner .banner {
+  flex-direction: row-reverse;
+  align-items: initial;
+}
+body main .no_js_banner .banner div {
+  margin: 5em;
+}
+body main .no_js_banner .banner label {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin: 5em 5em 0 0;
+}
+body main .no_js_banner .banner label:before, body main .no_js_banner .banner label:after {
+  content: "";
+  width: 3px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 0;
+  left: 12.5px;
+}
+body main .no_js_banner .banner label:before {
+  transform: rotate(45deg);
+}
+body main .no_js_banner .banner label:after {
+  transform: rotate(-45deg);
+}
+body main .no_js_banner .banner input {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  visibility: hidden;
+  position: absolute;
+}
+body main .no_js_banner .banner input:checked {
+  display: none;
+}
+body main .no_js_banner .banner input:checked + label + div, body main .no_js_banner .banner input:checked + label {
+  display: none;
+}
+body main .last_time_modified {
+  margin-left: 5em;
 }
 body main.flex_container {
   flex-direction: column;
@@ -755,6 +813,15 @@ body footer article.flex_container h3 {
     padding: 2.5em;
     height: calc(100vh - 5em);
     width: calc(100vw - 5em);
+  }
+  body main .last_time_modified {
+    margin-left: 2.5em;
+  }
+  body main .banner div {
+    margin: 2.5em;
+  }
+  body main .banner label {
+    margin: 2.5em 2.5em 0 0;
   }
   body main .home_cv {
     padding: 10.625em 2.5em;

@@ -24,7 +24,7 @@ const portfolio = {
     },
 
     noJs() {
-        //settings.noJsBannerElement.classList.add(settings.noDisplayClass);
+        settings.noJsBannerElement.classList.add(settings.noDisplayClass);
     },
 
     changeWidthOfProgressBarElement() {

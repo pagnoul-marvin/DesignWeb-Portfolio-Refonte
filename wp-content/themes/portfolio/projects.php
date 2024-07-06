@@ -95,7 +95,9 @@ $projects = new WP_Query([
 
     <main>
 
-        <section class="spacing section">
+        <?php dw_component('no_js_banner') ?>
+
+        <section class="section">
 
             <h2>Mes projets</h2>
 

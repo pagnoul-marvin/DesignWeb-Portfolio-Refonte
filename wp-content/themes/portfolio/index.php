@@ -18,7 +18,6 @@ $header_query = new WP_Query($args);
 
 if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_query->the_post(); ?>
 
-
     <div class="flex_container">
 
         <div class="title_and_catchphrase_container">
@@ -32,7 +31,6 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
             </h2>
 
             <p class="catchphrase"><?= get_field('home_header_catchphrase') ?></p>
-
 
         </div>
 
@@ -79,6 +77,8 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
     <main>
 
+        <?php dw_component('no_js_banner') ?>
+
         <section class="section">
 
             <h2>Mes derniers projets</h2>
@@ -102,7 +102,8 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                         <span class="last_project_card"></span>
 
-                        <a class="last_project_link" title="Aller vers la page <?= get_field('last_project_link')['title'] ?>"
+                        <a class="last_project_link"
+                           title="Aller vers la page <?= get_field('last_project_link')['title'] ?>"
                            href="<?= get_field('last_project_link')['url'] ?>"><?= get_field('last_project_link')['title'] ?></a>
 
                     </article>
