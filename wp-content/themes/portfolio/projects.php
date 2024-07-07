@@ -34,7 +34,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
         </div>
 
-        <div class="list_links">
+        <div class="list_links flex_container">
 
             <ul class="flex_container">
 
