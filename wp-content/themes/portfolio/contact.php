@@ -77,7 +77,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
             <div class="form_container">
 
-                <form action="" method="post" class="flex_container text">
+                <form action="<?= admin_url('admin-post.php') ?>" method="post" class="flex_container text">
 
                     <p>Les champs dot&eacute;s d&rsquo;une &laquo;&ast;&raquo; sont requis.</p>
 
@@ -131,6 +131,8 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
                     </fieldset>
 
                     <div>
+
+                        <input type="hidden" name="action" value="custom_contact_form">
 
                         <input class="cta_links dark_links" type="submit" title="Soumettre le formulaire" value="Soumettre">
 

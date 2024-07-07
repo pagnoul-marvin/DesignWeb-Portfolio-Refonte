@@ -50,27 +50,19 @@ function dw_component(string $component, array $arguments = []): void
     include($path);
 }
 
-function register_contact_form_saved_page(): void
+// Ajouter une entrée de menu dans le tableau de bord
+function register_contact_form_entries_page(): void
 {
-    add_menu_page('Contact Form Saved', 'Contact Form Saved', 'manage_options', 'contact-form-saved', 'display_contact_form_saved');
+    add_menu_page(
+        'Entrées du formulaire de contact', // Titre de la page
+        'Entrées du formulaire', // Nom du menu
+        'manage_options', // Capacité requise pour voir la page
+        'contact-form-entries', // Slug de la page
+        'display_contact_form_entries', // Callback pour afficher le contenu de la page
+        'dashicons-email' // Icône pour le menu
+    );
 }
-add_action('admin_menu', 'register_contact_form_saved_page');
-
-function display_contact_form_saved(): void
-{
-    $first_name = get_option('contact_form_first_name', 'No first name saved.');
-    $last_name = get_option('contact_form_last_name', 'No last name saved.');
-    $email = get_option('contact_form_email', 'No email saved.');
-    $message = get_option('contact_form_message', 'No message saved.');
-
-    echo '<div class="wrap">';
-    echo '<h1>Contact Form Saved</h1>';
-    echo '<p><strong>Prénom:</strong> ' . esc_html($first_name) . '</p>';
-    echo '<p><strong>Nom:</strong> ' . esc_html($last_name) . '</p>';
-    echo '<p><strong>Email:</strong> ' . esc_html($email) . '</p>';
-    echo '<p><strong>Message:</strong> ' . esc_html($message) . '</p>';
-    echo '</div>';
-}
+add_action('admin_menu', 'register_contact_form_entries_page');
 
 function give_header_class(): string
 {
