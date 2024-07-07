@@ -25,6 +25,10 @@
   padding: 0 5em;
 }
 
+a, .slider_button, .banner label[for="burger_menu"], input[type="submit"] {
+  cursor: url("../../resources/images/cursor.svg"), pointer;
+}
+
 .cta_links {
   font-size: 2.5em;
   padding: 1.25em .55em;
@@ -177,6 +181,7 @@
         flex-grow: 1;
 
         &:hover {
+
           li:not(:hover) {
             transform: scale(.9);
             filter: brightness(5%);
@@ -199,7 +204,6 @@
           transition: .3s ease-in-out;
           position: relative;
           overflow: hidden;
-          cursor: pointer;
 
           &:first-child .cards_link_image {
             background-image: url("../../resources/images/decors_egypte_small.svg");
@@ -1371,7 +1375,6 @@ body {
           width: 2em;
           height: 3em;
           position: relative;
-          cursor: pointer;
 
           .line {
             width: 100%;
