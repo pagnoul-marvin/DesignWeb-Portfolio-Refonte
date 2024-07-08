@@ -308,8 +308,6 @@ body header.about .background {
 }
 body header.about .content div.flex_container img {
   border-radius: 0.625em;
-  height: 40%;
-  width: auto;
 }
 body header.projects .background {
   background-image: url("../../resources/images/décors perse.png");
@@ -1079,6 +1077,9 @@ body footer article.flex_container h3 {
   }
   body header .content div.flex_container .list_links ul li {
     width: 60%;
+  }
+  body header .content div.flex_container div:has(img) {
+    text-align: center;
   }
   body main.flex_container section:nth-of-type(odd) {
     padding-right: 1em;

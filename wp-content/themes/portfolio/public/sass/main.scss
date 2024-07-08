@@ -377,8 +377,6 @@ body {
 
           img {
             border-radius: .625em;
-            height: 40%;
-            width: auto;
           }
         }
       }
@@ -1487,6 +1485,10 @@ body {
                 width: 60%;
               }
             }
+          }
+
+          div:has(img) {
+            text-align: center;
           }
         }
       }
