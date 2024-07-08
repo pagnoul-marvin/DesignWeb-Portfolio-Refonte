@@ -52,9 +52,7 @@ wp-content/themes/*
 !wp-content/themes/portfolio/*
 wp-content/themes/portfolio/.env.local.ini
 !wp-content/themes/portfolio/validator/*
-!wp-content/themes/portfolio/core/*
-!wp-content/themes/portfolio/core/exceptions/*
-!wp-content/themes/portfolio/php/*
+!wp-content/themes/portfolio/database/*
 !wp-content/themes/portfolio/public/*
 !wp-content/themes/portfolio/public/css/*
 !wp-content/themes/portfolio/public/js/*

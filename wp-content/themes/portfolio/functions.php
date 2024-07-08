@@ -1,5 +1,9 @@
 <?php
 
+use DW\ContactForm;
+
+require_once(__DIR__.'/database/ContactForm.php');
+
 add_filter('use_block_editor_for_post', '__return_false');
 
 register_nav_menu('main', 'Navigation principale, en-tête du site');
@@ -50,19 +54,13 @@ function dw_component(string $component, array $arguments = []): void
     include($path);
 }
 
-// Ajouter une entrée de menu dans le tableau de bord
-function register_contact_form_entries_page(): void
+function dw_contact_form_controller(): void
 {
-    add_menu_page(
-        'Entrées du formulaire de contact', // Titre de la page
-        'Entrées du formulaire', // Nom du menu
-        'manage_options', // Capacité requise pour voir la page
-        'contact-form-entries', // Slug de la page
-        'display_contact_form_entries', // Callback pour afficher le contenu de la page
-        'dashicons-email' // Icône pour le menu
-    );
+    new ContactForm();
 }
-add_action('admin_menu', 'register_contact_form_entries_page');
+
+add_action('admin_post_custom_contact_form', 'dw_contact_form_controller');
+add_action('admin_post_nopriv_custom_contact_form', 'dw_contact_form_controller');
 
 function give_header_class(): string
 {

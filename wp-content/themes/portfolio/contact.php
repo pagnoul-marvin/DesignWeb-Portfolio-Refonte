@@ -4,6 +4,8 @@
 Template Name: Contact
 */
 
+use DW\ContactForm;
+
 get_header();
 $args = array(
     'post_type' => 'header',
@@ -77,7 +79,35 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
             <div class="form_container">
 
-                <form action="<?= admin_url('admin-post.php') ?>" method="post" class="flex_container text">
+                <?php
+
+                $errors = ContactForm::errors();
+                $values = ContactForm::values();
+                $feedback = ContactForm::feedback();
+
+                if ($errors):?>
+
+                    <div class="form__error">
+
+                        <p>Oups&nbsp;! Il semblerait y avoir des erreurs, merci de v&eacute;rifier.</p>
+
+                    </div>
+
+                <?php else: ?>
+
+                    <?php if ($feedback): ?>
+
+                        <div class="form__feedback">
+
+                            <p>Merci&nbsp;! Votre message a bien &eacute;t&eacute; envoy&eacute;.</p>
+
+                        </div>
+
+                    <?php endif; ?>
+
+                <?php endif; ?>
+
+                <form action="<?= esc_url(admin_url('admin-post.php')) ?>" method="post" class="flex_container text">
 
                     <p>Les champs dot&eacute;s d&rsquo;une &laquo;&ast;&raquo; sont requis.</p>
 
@@ -90,7 +120,11 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
                             <label class="label_positioning" for="firstname">Votre pr&eacute;nom&ast;&nbsp;: 255 caract&egrave;res
                                 maximum</label>
 
-                            <input type="text" id="firstname" required placeholder="Ex : Jacques">
+                            <input type="text" id="firstname" required placeholder="Ex : Jacques" value="<?= $values['firstname'] ?? '' ?>">
+
+                            <?php if ($errors['firstname'] ?? null): ?>
+                                <p class="field__error"><?= $errors['firstname'] ?></p>
+                            <?php endif; ?>
 
                         </div>
 
@@ -99,7 +133,11 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
                             <label class="label_positioning" for="lastname">Votre nom&ast;&nbsp;: 255 caract&egrave;res
                                 maximum</label>
 
-                            <input type="text" id="lastname" required placeholder="Ex : Dupont">
+                            <input type="text" id="lastname" required placeholder="Ex : Dupont" value="<?= $values['lastname'] ?? '' ?>">
+
+                            <?php if ($errors['lastname'] ?? null): ?>
+                                <p class="field__error"><?= $errors['lastname'] ?></p>
+                            <?php endif; ?>
 
                         </div>
 
@@ -109,7 +147,11 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
                                 mail doit &ecirc;tre
                                 valide</label>
 
-                            <input type="email" id="mail" required placeholder="Ex : Jacques">
+                            <input type="email" id="mail" required placeholder="Ex : Jacques" value="<?= $values['email'] ?? '' ?>">
+
+                            <?php if ($errors['email'] ?? null): ?>
+                                <p class="field__error"><?= $errors['email'] ?></p>
+                            <?php endif; ?>
 
                         </div>
 
@@ -124,7 +166,11 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
                             <label class="label_positioning" for="message">Votre message&ast;&nbsp;:</label>
 
                             <textarea id="message" required rows="10"
-                                      placeholder="Ex : Je souhaite vous contacter afin de ..."></textarea>
+                                      placeholder="Ex : Je souhaite vous contacter afin de ..."><?= $values['message'] ?? '' ?></textarea>
+
+                            <?php if ($errors['message'] ?? null): ?>
+                                <p class="field__error"><?= $errors['message'] ?></p>
+                            <?php endif; ?>
 
                         </div>
 
@@ -134,7 +180,8 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                         <input type="hidden" name="action" value="custom_contact_form">
 
-                        <input class="cta_links dark_links" type="submit" title="Soumettre le formulaire" value="Soumettre">
+                        <input class="cta_links dark_links" type="submit" title="Soumettre le formulaire"
+                               value="Soumettre">
 
                     </div>
 
