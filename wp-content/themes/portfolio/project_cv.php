@@ -18,11 +18,11 @@ $header_query = new WP_Query($args);
 
 if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_query->the_post(); ?>
 
-    <div class="flex_container">
+    <div class="flex_container" itemscope itemtype="https://schema.org/CreativeWork">
 
         <div class="title_and_catchphrase_container">
 
-            <h2 class="main_title">
+            <h2 class="main_title" itemprop="name">
 
                 <?= get_field('cv_header_title') ?>
 
@@ -105,7 +105,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
         <?php if ($presentation->have_posts()) : while ($presentation->have_posts()) :$presentation->the_post(); ?>
 
-            <div class="presentation_container">
+            <div class="presentation_container" itemscope itemtype="https://schema.org/CreativeWork">
 
                 <article>
 
@@ -121,7 +121,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                         <div class="text_and_links flex_container">
 
-                            <p class="text"><?= get_field('presentation_description') ?></p>
+                            <p class="text" itemprop="description"><?= get_field('presentation_description') ?></p>
 
                             <div class="links_container flex_container">
 

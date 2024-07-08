@@ -117,9 +117,9 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
                 <?php if (get_field('ln_owner_name')): ?>
 
                     <p class="owner text">Nom&nbsp;: <?= get_field('ln_owner_name') ?></p>
-                    <p class="owner text">Adresse&nbsp;: <?= get_field('ln_owner_address') ?></p>
-                    <p class="owner text">Adresse mail&nbsp;: <?= get_field('ln_owner_mail') ?></p>
-                    <p class="owner text">T&eacute;l&eacute;phone&nbsp;: <?= get_field('ln_owner_tel') ?></p>
+                    <p class="owner text" itemprop="address">Adresse&nbsp;: <?= get_field('ln_owner_address') ?></p>
+                    <p class="owner text" itemprop="email">Adresse mail&nbsp;: <?= get_field('ln_owner_mail') ?></p>
+                    <p class="owner text" itemprop="telephone">T&eacute;l&eacute;phone&nbsp;: <?= get_field('ln_owner_tel') ?></p>
 
                 <?php endif; ?>
 

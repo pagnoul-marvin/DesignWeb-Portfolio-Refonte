@@ -13,8 +13,8 @@
     <script type="module" src="<?= dw_asset('js/main.js'); ?>"></script>
     <title><?= get_bloginfo('name'); ?> &ndash; <?= get_the_title() ?></title>
 </head>
-<body>
 
+<body itemscope itemtype="https://schema.org/Person">
 
 <header class="<?= give_header_class() ?>">
 

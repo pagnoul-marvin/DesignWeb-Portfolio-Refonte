@@ -124,7 +124,7 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                 <article>
 
-                    <h3 class="soft_skill_title"><?= get_field('soft_skill_title') ?></h3>
+                    <h3 class="soft_skill_title" itemprop="knowsAbout"><?= get_field('soft_skill_title') ?></h3>
 
                     <p class="soft_skill_description text"><?= get_field('soft_skill_description') ?></p>
 

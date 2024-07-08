@@ -33,9 +33,9 @@
 
                 <?php foreach (dw_get_navigation_links('socials') as $link): ?>
 
-                    <li>
+                    <li itemprop="sameAs" itemscope itemtype="https://schema.org/URL">
 
-                        <a class="text" href="<?= $link->url ?>"
+                        <a itemprop="url" class="text" href="<?= $link->url ?>"
                            title="Aller vers la page <?= $link->label ?>"><?= $link->label ?></a>
 
                     </li>
@@ -68,7 +68,7 @@
 
         <h2 class="hidden">Mentions l&eacute;gales</h2>
 
-        <small class="text">&copy; 2024 Marvin Pagnoul &ndash; Tous droits r&eacute;serv&eacute;s</small>
+        <small class="text">&copy; 2024 <span itemprop="givenName">Marvin</span> <span itemprop="familyName">Pagnoul</span> &ndash; Tous droits r&eacute;serv&eacute;s</small>
 
         <small><a class="main_footer_link" href="<?= home_url() . '/mentions-legales/' ?>"
                   title="Aller voir les mentions légales">Mentions l&eacute;gales</a></small>

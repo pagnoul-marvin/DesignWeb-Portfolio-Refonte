@@ -24,9 +24,9 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
             <h2 class="main_title">
 
-                <span><?= get_field('home_header_first_title') ?></span>
+                <span itemprop="givenName"><?= get_field('home_header_first_title') ?></span>
 
-                <span><?= get_field('home_header_second_title') ?></span>
+                <span itemprop="jobTitle"><?= get_field('home_header_second_title') ?></span>
 
             </h2>
 
