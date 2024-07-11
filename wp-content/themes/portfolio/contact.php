@@ -4,7 +4,9 @@
 Template Name: Contact
 */
 
-use DW\ContactForm;
+require __DIR__.'/database/Database.php';
+
+use Database\Database;
 
 get_header();
 $args = array(
@@ -81,33 +83,34 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                 <?php
 
-                $errors = ContactForm::errors();
-                $values = ContactForm::values();
-                $feedback = ContactForm::feedback();
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    $db = new Database(__DIR__.'/.env.local.ini');
+                    $errors = $db->getErrors();
+                    $formSubmitted = true;
 
-                if ($errors):?>
+                    if ($errors):
 
-                    <div class="form__error">
+                        $formSubmitted = false; ?>
 
-                        <p>Oups&nbsp;! Il semblerait y avoir des erreurs, merci de v&eacute;rifier.</p>
+                        <div class="form_error">
 
-                    </div>
+                            <p class="text">Oups&nbsp;! Il semblerait y avoir des erreurs, merci de v&eacute;rifier.</p>
 
-                <?php else: ?>
+                        </div>
 
-                    <?php if ($feedback): ?>
+                    <?php else: ?>
 
-                        <div class="form__feedback">
+                        <div class="form_feedback">
 
-                            <p>Merci&nbsp;! Votre message a bien &eacute;t&eacute; envoy&eacute;.</p>
+                            <p class="text">Merci&nbsp;! Votre message a bien &eacute;t&eacute; envoy&eacute;.</p>
 
                         </div>
 
                     <?php endif; ?>
 
-                <?php endif; ?>
+               <?php } ?>
 
-                <form action="<?= esc_url(admin_url('admin-post.php')) ?>" method="post" class="flex_container text">
+                <form action="<?= esc_url(home_url().'/me-contacter/') ?>" method="post" class="flex_container text">
 
                     <p>Les champs dot&eacute;s d&rsquo;une &laquo;&ast;&raquo; sont requis.</p>
 
@@ -120,10 +123,10 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
                             <label class="label_positioning" for="firstname">Votre pr&eacute;nom&ast;&nbsp;: 255 caract&egrave;res
                                 maximum</label>
 
-                            <input type="text" id="firstname" required placeholder="Ex : Jacques" value="<?= $values['firstname'] ?? '' ?>">
+                            <input type="text" id="firstname" name="firstname" required placeholder="Ex : Jacques">
 
                             <?php if ($errors['firstname'] ?? null): ?>
-                                <p class="field__error"><?= $errors['firstname'] ?></p>
+                                <p class="field_error text"><?= $errors['firstname'] ?></p>
                             <?php endif; ?>
 
                         </div>
@@ -133,24 +136,24 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
                             <label class="label_positioning" for="lastname">Votre nom&ast;&nbsp;: 255 caract&egrave;res
                                 maximum</label>
 
-                            <input type="text" id="lastname" required placeholder="Ex : Dupont" value="<?= $values['lastname'] ?? '' ?>">
+                            <input type="text" id="lastname" name="lastname" required placeholder="Ex : Dupont">
 
                             <?php if ($errors['lastname'] ?? null): ?>
-                                <p class="field__error"><?= $errors['lastname'] ?></p>
+                                <p class="field_error text"><?= $errors['lastname'] ?></p>
                             <?php endif; ?>
 
                         </div>
 
                         <div class="label_input">
 
-                            <label class="label_positioning" for="mail">Votre adresse mail&ast;&nbsp;: Votre adresse
+                            <label class="label_positioning" for="email">Votre adresse mail&ast;&nbsp;: Votre adresse
                                 mail doit &ecirc;tre
                                 valide</label>
 
-                            <input type="email" id="mail" required placeholder="Ex : Jacques" value="<?= $values['email'] ?? '' ?>">
+                            <input type="email" id="email" name="email" required placeholder="Ex : Jacques">
 
                             <?php if ($errors['email'] ?? null): ?>
-                                <p class="field__error"><?= $errors['email'] ?></p>
+                                <p class="field_error text"><?= $errors['email'] ?></p>
                             <?php endif; ?>
 
                         </div>
@@ -165,11 +168,11 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
 
                             <label class="label_positioning" for="message">Votre message&ast;&nbsp;:</label>
 
-                            <textarea id="message" required rows="10"
-                                      placeholder="Ex : Je souhaite vous contacter afin de ..."><?= $values['message'] ?? '' ?></textarea>
+                            <textarea id="message" name="message" required rows="10"
+                                      placeholder="Ex : Je souhaite vous contacter afin de ..."></textarea>
 
                             <?php if ($errors['message'] ?? null): ?>
-                                <p class="field__error"><?= $errors['message'] ?></p>
+                                <p class="field_error text"><?= $errors['message'] ?></p>
                             <?php endif; ?>
 
                         </div>
@@ -177,8 +180,6 @@ if ($header_query->have_posts()) : while ($header_query->have_posts()) :$header_
                     </fieldset>
 
                     <div>
-
-                        <input type="hidden" name="action" value="custom_contact_form">
 
                         <input class="cta_links dark_links" type="submit" title="Soumettre le formulaire"
                                value="Soumettre">

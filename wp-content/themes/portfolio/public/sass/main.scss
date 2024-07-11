@@ -29,6 +29,10 @@ a, .slider_button, .banner label[for="burger_menu"], input[type="submit"] {
   cursor: url("../../resources/images/cursor.svg"), pointer;
 }
 
+.error_link {
+  margin-top: 2em;
+}
+
 .cta_links {
   font-size: 2.5em;
   padding: 1.25em .55em;
@@ -204,6 +208,7 @@ a, .slider_button, .banner label[for="burger_menu"], input[type="submit"] {
           transition: .3s ease-in-out;
           position: relative;
           overflow: hidden;
+          border-radius: .625em;
 
           &:first-child .cards_link_image {
             background-image: url("../../resources/images/decors_egypte_small.svg");
@@ -227,7 +232,6 @@ a, .slider_button, .banner label[for="burger_menu"], input[type="submit"] {
             align-content: center;
             text-align: center;
             color: transparent;
-            border-radius: .25em;
             position: absolute;
             top: -100%;
             left: 0;
@@ -236,7 +240,6 @@ a, .slider_button, .banner label[for="burger_menu"], input[type="submit"] {
           }
 
           .cards_link_image {
-            border-radius: .625em;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -289,6 +292,34 @@ a, .slider_button, .banner label[for="burger_menu"], input[type="submit"] {
     right: 1rem;
     background-image: url("../../resources/images/left_arrow.svg");
   }
+}
+
+.form_error, .form_feedback {
+  position: absolute;
+  right: 0;
+  top: 10em;
+  padding: 1em;
+  transition: .3s ease-in-out;
+  opacity: 1;
+  color: $white_color;
+  border-radius: .625em;
+}
+
+.form_error {
+  background-color: $red_color;
+}
+
+.form_feedback {
+  background-color: $green_color;
+}
+
+.disappear {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.field_error {
+  color: $red_color;
 }
 
 body {
@@ -578,6 +609,8 @@ body {
         width: calc(50% - 20px);
         height: 30em;
         overflow: hidden;
+        position: relative;
+        border-radius: .625em;
 
         &:nth-of-type(even) {
           transform: translateY(calc(50% + 1.875em));
@@ -599,7 +632,6 @@ body {
           font-family: 'Helvetica-Bold', 'Arial-Bold', 'Roboto-Bold', sans-serif;
           font-weight: bold;
           background-color: rgba(0, 0, 0, .4);
-          border-radius: .25em;
         }
 
         &_card {
@@ -610,7 +642,6 @@ body {
           background-repeat: no-repeat;
           background-position: top center;
           background-size: cover;
-          border-radius: 0.625em;
         }
 
         &:first-of-type .last_project_card {
@@ -1196,6 +1227,15 @@ body {
         }
       }
 
+      .last_projects_container {
+        .last_project {
+          &_link {
+            top: 0;
+            color: $white_color;
+          }
+        }
+      }
+
       .form_container {
         fieldset {
           flex-direction: column;
@@ -1304,7 +1344,7 @@ body {
         &_list {
           position: absolute;
           top: -10000px;
-          z-index: 2;
+          z-index: 3;
         }
 
         &_home_link {
@@ -1346,7 +1386,7 @@ body {
             }
 
             & ~ label[for="burger_menu"] {
-              z-index: 3;
+              z-index: 4;
             }
 
             & ~ label .line {
@@ -1433,7 +1473,7 @@ body {
   }
 }
 
-@media (width <= 420px) {
+@media (width <= 500px) {
   body {
     h1, h2 {
       font-size: 2.5em;

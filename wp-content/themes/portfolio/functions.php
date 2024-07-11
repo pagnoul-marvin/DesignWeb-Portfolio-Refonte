@@ -1,9 +1,5 @@
 <?php
 
-use DW\ContactForm;
-
-require_once(__DIR__.'/database/ContactForm.php');
-
 add_filter('use_block_editor_for_post', '__return_false');
 
 register_nav_menu('main', 'Navigation principale, en-tête du site');
@@ -53,14 +49,6 @@ function dw_component(string $component, array $arguments = []): void
 
     include($path);
 }
-
-function dw_contact_form_controller(): void
-{
-    new ContactForm();
-}
-
-add_action('admin_post_custom_contact_form', 'dw_contact_form_controller');
-add_action('admin_post_nopriv_custom_contact_form', 'dw_contact_form_controller');
 
 function give_header_class(): string
 {

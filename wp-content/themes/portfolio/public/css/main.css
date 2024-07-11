@@ -27,6 +27,10 @@ a, .slider_button, .banner label[for=burger_menu], input[type=submit] {
   cursor: url("../../resources/images/cursor.svg"), pointer;
 }
 
+.error_link {
+  margin-top: 2em;
+}
+
 .cta_links {
   font-size: 2.5em;
   padding: 1.25em 0.55em;
@@ -175,6 +179,7 @@ a, .slider_button, .banner label[for=burger_menu], input[type=submit] {
   transition: 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
+  border-radius: 0.625em;
 }
 .content > div.flex_container .list_links ul li:first-child .cards_link_image {
   background-image: url("../../resources/images/decors_egypte_small.svg");
@@ -195,7 +200,6 @@ a, .slider_button, .banner label[for=burger_menu], input[type=submit] {
   align-content: center;
   text-align: center;
   color: transparent;
-  border-radius: 0.25em;
   position: absolute;
   top: -100%;
   left: 0;
@@ -203,7 +207,6 @@ a, .slider_button, .banner label[for=burger_menu], input[type=submit] {
   text-decoration: none;
 }
 .content > div.flex_container .list_links ul li .cards_link_image {
-  border-radius: 0.625em;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -248,6 +251,34 @@ a, .slider_button, .banner label[for=burger_menu], input[type=submit] {
 .slider_button:last-of-type {
   right: 1rem;
   background-image: url("../../resources/images/left_arrow.svg");
+}
+
+.form_error, .form_feedback {
+  position: absolute;
+  right: 0;
+  top: 10em;
+  padding: 1em;
+  transition: 0.3s ease-in-out;
+  opacity: 1;
+  color: rgb(255, 255, 255);
+  border-radius: 0.625em;
+}
+
+.form_error {
+  background-color: #790b0b;
+}
+
+.form_feedback {
+  background-color: #3a790b;
+}
+
+.disappear {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.field_error {
+  color: #790b0b;
 }
 
 body {
@@ -441,6 +472,8 @@ body main .last_projects_container .last_project {
   width: calc(50% - 20px);
   height: 30em;
   overflow: hidden;
+  position: relative;
+  border-radius: 0.625em;
 }
 body main .last_projects_container .last_project:nth-of-type(even) {
   transform: translateY(calc(50% + 1.875em));
@@ -461,7 +494,6 @@ body main .last_projects_container .last_project_link {
   font-family: "Helvetica-Bold", "Arial-Bold", "Roboto-Bold", sans-serif;
   font-weight: bold;
   background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 0.25em;
 }
 body main .last_projects_container .last_project_card {
   width: 100%;
@@ -471,7 +503,6 @@ body main .last_projects_container .last_project_card {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-  border-radius: 0.625em;
 }
 body main .last_projects_container .last_project:first-of-type .last_project_card {
   background-image: url("../../resources/images/piédestal avec cv.png");
@@ -872,6 +903,10 @@ body footer article.flex_container h3 {
   body main .projects_container article .project_content .text_and_links, body main .projects_container article .presentation_content .text_and_links, body main .projects_container article .language_content .text_and_links, body main .presentation_container article .project_content .text_and_links, body main .presentation_container article .presentation_content .text_and_links, body main .presentation_container article .language_content .text_and_links, body main .language_container article .project_content .text_and_links, body main .language_container article .presentation_content .text_and_links, body main .language_container article .language_content .text_and_links {
     gap: 1.875em;
   }
+  body main .last_projects_container .last_project_link {
+    top: 0;
+    color: rgb(255, 255, 255);
+  }
   body main .form_container fieldset {
     flex-direction: column;
   }
@@ -942,7 +977,7 @@ body footer article.flex_container h3 {
   body header .main_nav_list {
     position: absolute;
     top: -10000px;
-    z-index: 2;
+    z-index: 3;
   }
   body header .main_nav_home_link {
     width: 50px;
@@ -977,7 +1012,7 @@ body footer article.flex_container h3 {
     font-size: 2.5em;
   }
   body header .main_nav input[type=checkbox]:checked ~ label[for=burger_menu] {
-    z-index: 3;
+    z-index: 4;
   }
   body header .main_nav input[type=checkbox]:checked ~ label .line {
     background-color: transparent;
@@ -1042,7 +1077,7 @@ body footer article.flex_container h3 {
     padding-right: 2.5em;
   }
 }
-@media (width <= 420px) {
+@media (width <= 500px) {
   body h1, body h2 {
     font-size: 2.5em;
   }

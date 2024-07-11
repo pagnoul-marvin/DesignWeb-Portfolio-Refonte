@@ -9,6 +9,7 @@ const portfolio = {
     init() {
         this.addEventListeners();
         this.noJs();
+        this.disappearDivElements();
     },
 
     addEventListeners() {
@@ -49,7 +50,19 @@ const portfolio = {
             }
         }
         settings.slideshowElement.style.left = `${this.pourcentage}%`;
-    }
+    },
+
+    disappearDivElements() {
+        setTimeout(function () {
+
+            if (settings.validateDivElement) {
+                settings.validateDivElement.classList.add('disappear');
+            }
+            if (settings.notValidateDivElement) {
+                settings.notValidateDivElement.classList.add('disappear');
+            }
+        }, settings.timeBeforeDivElementsDisappear);
+    },
 }
 
 portfolio.init();
