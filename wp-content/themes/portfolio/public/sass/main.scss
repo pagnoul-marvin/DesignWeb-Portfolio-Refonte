@@ -1,6 +1,23 @@
 //sass --watch index.scss:../css/index.css
 @import "variables";
 
+.translated {
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  transform: translateY(30px);
+
+  &.active {
+    -webkit-transition: 1.5s ease-in-out;
+    -o-transition: 1.5s ease-in-out;
+    transition: 1.5s ease-in-out;
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
 .hidden {
   overflow: hidden !important;
   font-size: 0 !important;
@@ -50,7 +67,7 @@ a, .slider_button, .banner label[for="burger_menu"], input[type="submit"] {
   border: none;
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 }
 
@@ -192,7 +209,7 @@ a, .slider_button, .banner label[for="burger_menu"], input[type="submit"] {
           }
 
           li:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
 
             & .cards_link {
               color: $white_color;
@@ -280,7 +297,7 @@ a, .slider_button, .banner label[for="burger_menu"], input[type="submit"] {
   transition: .3s ease-in-out;
 
   &:hover {
-    transform: scale(1.1) translateY(-50%);
+    transform: scale(1.05) translateY(-50%);
   }
 
   &:first-of-type {
@@ -898,9 +915,9 @@ body {
             flex-direction: column;
 
             .links_container {
-              align-items: initial;
               width: 100%;
               gap: 2.5em;
+              flex-wrap: wrap;
             }
           }
         }

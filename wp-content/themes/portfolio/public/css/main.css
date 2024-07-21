@@ -1,4 +1,20 @@
 @charset "UTF-8";
+.translated {
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  transform: translateY(30px);
+}
+.translated.active {
+  -webkit-transition: 1.5s ease-in-out;
+  -o-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
 .hidden {
   overflow: hidden !important;
   font-size: 0 !important;
@@ -48,7 +64,7 @@ a, .slider_button, .banner label[for=burger_menu], input[type=submit] {
   border: none;
 }
 .cta_links:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .light_links {
@@ -166,7 +182,7 @@ a, .slider_button, .banner label[for=burger_menu], input[type=submit] {
   filter: brightness(5%);
 }
 .content > div.flex_container .list_links ul:hover li:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .content > div.flex_container .list_links ul:hover li:hover .cards_link {
   color: rgb(255, 255, 255);
@@ -242,7 +258,7 @@ a, .slider_button, .banner label[for=burger_menu], input[type=submit] {
   transition: 0.3s ease-in-out;
 }
 .slider_button:hover {
-  transform: scale(1.1) translateY(-50%);
+  transform: scale(1.05) translateY(-50%);
 }
 .slider_button:first-of-type {
   background-image: url("../../resources/images/right_arrow.svg");
@@ -706,9 +722,9 @@ body main .projects_container article .project_content .text_and_links, body mai
   flex-direction: column;
 }
 body main .projects_container article .project_content .text_and_links .links_container, body main .projects_container article .presentation_content .text_and_links .links_container, body main .projects_container article .language_content .text_and_links .links_container, body main .presentation_container article .project_content .text_and_links .links_container, body main .presentation_container article .presentation_content .text_and_links .links_container, body main .presentation_container article .language_content .text_and_links .links_container, body main .language_container article .project_content .text_and_links .links_container, body main .language_container article .presentation_content .text_and_links .links_container, body main .language_container article .language_content .text_and_links .links_container {
-  align-items: initial;
   width: 100%;
   gap: 2.5em;
+  flex-wrap: wrap;
 }
 body main .language_container .language_content {
   flex-flow: row-reverse;

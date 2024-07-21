@@ -8,6 +8,7 @@ export const settings = {
     noJsBannerElement: document.querySelector('.no_js_banner'),
     validateDivElement: document.querySelector('.form_feedback'),
     notValidateDivElement: document.querySelector('.form_error'),
+    sectionElements: document.querySelectorAll('section'),
 
 
     //NUMBERS
@@ -26,4 +27,6 @@ export const settings = {
     //CLASSES
 
     noDisplayClass: 'no_display',
+    translatedClass: 'translated',
+    activeClass: 'active',
 }
