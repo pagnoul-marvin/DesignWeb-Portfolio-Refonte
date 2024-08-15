@@ -217,7 +217,7 @@ a, .slider_button, .banner label[for=cross], label[for=burger_menu], input[type=
   -webkit-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-  max-height: 15.25em;
+  max-height: 80%;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
@@ -252,10 +252,10 @@ a, .slider_button, .banner label[for=cross], label[for=burger_menu], input[type=
   border-radius: 0.625em;
 }
 .content > div.flex_container .list_links ul li:first-child .cards_link_image {
-  background-image: url("../../resources/images/decors_egypte_small.svg");
+  background-image: url("../../resources/images/thermopyles.svg");
 }
 .content > div.flex_container .list_links ul li:nth-of-type(2) .cards_link_image {
-  background-image: url("../../resources/images/decors_perse_small.svg");
+  background-image: url("../../resources/images/mont_olympe.svg");
 }
 .content > div.flex_container .list_links ul li:last-child .cards_link_image {
   background-image: url("../../resources/images/decors_grece_small.svg");
@@ -411,7 +411,7 @@ body header {
   position: relative;
 }
 body header.home .background {
-  background-image: url("../../resources/images/décors rome.png");
+  background-image: url("../../resources/images/map.svg");
 }
 body header.contact .background {
   background-image: url("../../resources/images/décors grèce.png");
@@ -423,13 +423,13 @@ body header.contact .content div.flex_container .list_links li:last-child .cards
   background-image: url("../../resources/images/mail.png");
 }
 body header.about .background {
-  background-image: url("../../resources/images/décors égypte.png");
+  background-image: url("../../resources/images/thermopyles.svg");
 }
 body header.about .content div.flex_container img {
   border-radius: 0.625em;
 }
 body header.projects .background {
-  background-image: url("../../resources/images/décors perse.png");
+  background-image: url("../../resources/images/mont_olympe.svg");
 }
 body header.projects .content div.flex_container .list_links li:first-child .cards_link_image {
   background-image: url("../../resources/images/cv_landing_page.png");
@@ -1203,10 +1203,6 @@ body footer article.flex_container h3 {
     top: -200%;
     z-index: 3;
     opacity: 0;
-  }
-  body header .main_nav_home_link {
-    width: 50px;
-    height: 36.82px;
   }
   body header .main_nav label[for=burger_menu], body header .main_nav input[id=burger_menu] {
     display: initial;
